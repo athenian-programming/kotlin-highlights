@@ -1,11 +1,11 @@
 package org.athenian
 
-// Block body
+// Block body -- more than one statement
 fun addBB(i: Int, j: Int): Int {
     return i + j
 }
 
-// Expression body
+// Expression body -- single statements
 fun addEB(i: Int, j: Int) = i + j
 
 fun ifExprBB(i: Int): String {
@@ -15,13 +15,21 @@ fun ifExprBB(i: Int): String {
         return "Below"
 }
 
+// if stmts return values
 fun ifExprEB1(i: Int): String {
-    return if (i > 10)
-        "Above"
-    else
-        "Below"
+    val retval =
+        if (i > 10) {
+            println("Found above")
+            "Above"
+        } else {
+            println("Found below")
+            "Below"
+        }
+
+    return retval
 }
 
+// Most concise
 fun ifExprEB2(i: Int) = if (i > 10) "Above" else "Below"
 
 // when is a super switch
@@ -34,12 +42,12 @@ fun whenEB(i: Int) =
     }
 
 fun main() {
-    println("Results of addBB(3, 4) = ${addBB(3, 4)}")
-    println("Results of addEB(5, 6) = ${addEB(5, 6)}")
+    println("Result of addBB(3, 4) = ${addBB(3, 4)}")
+    println("Result of addEB(5, 6) = ${addEB(5, 6)}")
 
-    println("Results of ifExprBB(12) = ${ifExprBB(12)}")
-    println("Results of ifExprEB1(7) = ${ifExprEB1(7)}")
-    println("Results of ifExprEB2(8) = ${ifExprEB2(8)}")
+    println("Result of ifExprBB(12) = ${ifExprBB(12)}")
+    println("Result of ifExprEB1(7) = ${ifExprEB1(7)}")
+    println("Result of ifExprEB2(8) = ${ifExprEB2(8)}")
 
-    println("Results of whenEB(10) = ${whenEB(10)}")
+    println("Result of whenEB(10) = ${whenEB(10)}")
 }

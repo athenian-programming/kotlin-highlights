@@ -2,6 +2,8 @@ package org.athenian
 
 fun main() {
 
+    // Say good-bye to the dreaded NPE
+
     var a: String = "Non-null String"
     var b: String? = "Nullable string"
 
