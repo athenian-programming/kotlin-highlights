@@ -2,6 +2,7 @@ package org.athenian
 
 fun main() {
 
+    // Encouraged to think about mutability and default to immutability
     // vals and vars
     var a: String = "A string value"
     val b: String = "Another string Value"
@@ -11,7 +12,7 @@ fun main() {
     // b = "cannot be reassigned"
 
 
-    // Type inference
+    // Type inference -- super smart compiler
     var c = b
 
 

@@ -4,9 +4,8 @@ fun main() {
 
     var a: String = "Non-null String"
     var b: String? = "Nullable string"
-    val n: String? = null
 
-    //b = n
+    //b = null
 
     // Enforced nullability and smart casts
     if (b != null)
@@ -15,12 +14,13 @@ fun main() {
     // Elvis operator
     a = b ?: "Found a null value";
 
-    // Trust me, I know what I am doing
+    // Trust me, I know what I am doing -- all bets are off for NPE
     a = b!!
 
-    println(a)
+    // String interpolation
+    println("Variable a = $a and it has a length of ${a.length}")
 
-    // Null prop
+    // Null propagation
     val len = b.slice(2..6).slice(0..3).length ?: 0
-    println(len)
+    println("The legnth is: $len")
 }
