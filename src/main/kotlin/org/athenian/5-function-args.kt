@@ -15,7 +15,6 @@ fun reformat(
 }
 
 fun main() {
-
     // Named arguments
     println("Result of func(3, 4) = ${func(3, 4)}")
     println("Result of func(i = 7, j = 4) = ${func(i = 7, j = 4)}")

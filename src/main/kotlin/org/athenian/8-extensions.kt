@@ -18,5 +18,5 @@ fun main() {
 
     println((0..5).reversed().map { "$it is ${if (it.isEven) "Even" else "Odd"}" })
 
-    println("This IS a Test".mixCase())
+    println("This IS a TEST".mixCase())
 }
