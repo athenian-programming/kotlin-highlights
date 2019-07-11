@@ -29,7 +29,6 @@ fun String.halfCase(lowerFirst: Boolean = true): String {
 }
 
 fun main() {
-    println("5.isEven = ${5.isEven}")
     println((0..5).map { "$it is ${if (it.isEven) "Even" else "Odd"}" })
 
     println("5.double() = ${5.double()}")

@@ -25,5 +25,4 @@ fun main() {
 
     println("lazyValue = ${u.lazyValue}")
     println("lazyValue = ${u.lazyValue}")
-
 }
