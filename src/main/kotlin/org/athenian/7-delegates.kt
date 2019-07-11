@@ -1,6 +1,6 @@
 package org.athenian
 
-class User(private val objMap: Map<String, Any?>) {
+class User(objMap: Map<String, Any?>) {
 
     // Map Delegate
     val name: String by objMap
