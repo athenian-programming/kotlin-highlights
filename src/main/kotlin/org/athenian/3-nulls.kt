@@ -4,9 +4,12 @@ fun main() {
 
     // Say good-bye to the dreaded NPE
 
+    // Nullability is built into the type system
     var a: String = "Non-null String"
     var b: String? = "Nullable string"
 
+    //a = null
+    //a = b
     //b = null
 
     // Enforced nullability and smart casts

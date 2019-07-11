@@ -13,7 +13,7 @@ fun main() {
     // Type inference -- super smart compiler
     var c = b
 
-    // No primitives
+    // No primitives and boxing/unboxing
     val i: Int = 9
     val j = 8
     val f = 34.54

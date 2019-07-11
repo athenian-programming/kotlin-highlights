@@ -14,6 +14,9 @@ fun main() {
             "Not equal"
         }
 
+    // No ternanry operator
+    val lendesc = if ("not" in ifResult) "Contains not" else "Missing not"
+
     // when is a super switch
     val whenResult =
         when {
@@ -23,5 +26,5 @@ fun main() {
             else -> throw IllegalStateException()
         }
 
-    println("$ifResult and $whenResult")
+    println("$ifResult and $whenResult and $lendesc")
 }
