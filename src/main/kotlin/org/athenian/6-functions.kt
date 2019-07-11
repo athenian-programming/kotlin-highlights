@@ -32,15 +32,6 @@ fun ifExprEB1(i: Int): String {
 // Most concise
 fun ifExprEB2(i: Int) = if (i > 10) "Above" else "Below"
 
-// when is a super switch
-fun whenEB(i: Int) =
-    when {
-        i < 10 -> "Below"
-        i == 10 -> "Equal"
-        i > 10 -> "Above"
-        else -> "Unknown"
-    }
-
 fun main() {
     println("Result of addBB(3, 4) = ${addBB(3, 4)}")
     println("Result of addEB(5, 6) = ${addEB(5, 6)}")
@@ -48,6 +39,4 @@ fun main() {
     println("Result of ifExprBB(12) = ${ifExprBB(12)}")
     println("Result of ifExprEB1(7) = ${ifExprEB1(7)}")
     println("Result of ifExprEB2(8) = ${ifExprEB2(8)}")
-
-    println("Result of whenEB(10) = ${whenEB(10)}")
 }

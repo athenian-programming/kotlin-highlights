@@ -1,7 +1,6 @@
 package org.athenian
 
 // Default arguments
-fun func(i: Int = 5, j: Int = 6) = i * j
 
 // Improves readability for long arg lists
 fun reformat(
@@ -13,6 +12,8 @@ fun reformat(
 ) {
     // ...
 }
+
+fun func(i: Int = 5, j: Int = 6) = i * j
 
 fun main() {
     // Named arguments

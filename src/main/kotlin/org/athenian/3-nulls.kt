@@ -19,10 +19,7 @@ fun main() {
     // Trust me, I know what I am doing -- all bets are off for NPE
     a = b!!
 
-    // String interpolation
-    println("Variable a = $a and it has a length of ${a.length}")
-
     // Null propagation
     val len = b.slice(2..6).slice(0..3).length ?: 0
-    println("The legnth is: $len")
+    println("The length is: $len")
 }

@@ -6,6 +6,9 @@ import java.time.LocalDate
 // Properties as params
 class Person(val firstName: String, val lastName: String, private val birthDate: LocalDate) {
 
+    var counter = 0
+        private set
+
     // With block body
     val title: String
         get() {
@@ -20,7 +23,8 @@ class Person(val firstName: String, val lastName: String, private val birthDate:
         get() = birthDate.until(LocalDate.now()).years
 
     var balance = 0
-        set(value) {
+        set(value: Int) {
+            counter++
             if (value >= 0)
                 field = value
             else
@@ -37,4 +41,6 @@ fun main() {
 
     p.balance = 4
     println("Balance = ${p.balance}")
+
+    println("Counter = ${p.counter}")
 }

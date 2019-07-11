@@ -7,9 +7,12 @@ val Int.isEven: Boolean
     get() = this % 2 == 0
 
 // Extension function
+fun Int.double(): Int = this * this
+
+// Extension function
 fun String.mixCase(): String {
     return this.toList()
-        .mapIndexed { i, c ->
+        .mapIndexed { i: Int, c: Char ->
             if (i.isEven) c.toLowerCase() else c.toUpperCase()
         }
         .joinToString(separator = "")
@@ -28,6 +31,7 @@ fun String.halfCase(lowerFirst: Boolean = true): String {
 
 fun main() {
     println("5.isEven = ${5.isEven}")
+    println("5.double() = ${5.double()}")
 
     println((0..5).reversed().map { "$it is ${if (it.isEven) "Even" else "Odd"}" })
 
