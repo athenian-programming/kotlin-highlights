@@ -1,7 +1,8 @@
 package org.athenian
 
 // Functions can be declared outside of classes
-// argv is optional
+// No one class per file restriction
+// argv on main() is optional
 // No semis
 // No checked exceptions
 
@@ -10,8 +11,8 @@ fun main() {
     // Type decls come after the variable and function
     val hello: String = "Hello World"
 
-    // No System.out prefix
     // String interpolation
+    // No System.out prefix
     println("I would like to say: $hello")
 
     // Sane treatment for Strings
