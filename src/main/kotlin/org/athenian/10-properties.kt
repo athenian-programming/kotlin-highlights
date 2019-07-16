@@ -34,6 +34,7 @@ class Person(val firstName: String, val lastName: String, private val birthDate:
 
 fun main() {
     val p = Person("Bill", "Smith", LocalDate.of(1980, 10, 31))
+
     println("${p.fullName} (aka ${p.firstName}) is ${p.age} years old")
 
     p.balance = -4
