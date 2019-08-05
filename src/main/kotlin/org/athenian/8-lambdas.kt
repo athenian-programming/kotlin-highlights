@@ -1,10 +1,12 @@
 package org.athenian
 
 // Lambda without params
-val constant: () -> Int = { 4 }
+val constant1: () -> Int = fun(): Int { return 4 }
+val constant2: () -> Int = { 4 }
 
 // Lambda with params
-val adder: (Int, Int) -> Int = { a: Int, b: Int -> a + b }
+val adder1: (Int, Int) -> Int = fun(a: Int, b: Int): Int { return a + b }
+val adder2: (Int, Int) -> Int = { a: Int, b: Int -> a + b }
 
 // Usage of it
 val double1: (Int) -> Int = { a: Int -> a * 2 }
@@ -19,9 +21,9 @@ fun twoIntFunc(
 
 
 fun main() {
-    println("constant(): ${constant()}")
+    println("constant2(): ${constant2()}")
 
-    println("adder(4, 5): ${adder(4, 5)}")
+    println("adder2(4, 5): ${adder2(4, 5)}")
 
     println("double2(8): ${double2(8)}")
 
