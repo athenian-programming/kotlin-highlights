@@ -24,12 +24,12 @@ operator fun RandomVals.component2() = randomVal2
 
 fun main() {
 
-    // Kotlin data classes include destructuring calls
+    // Kotlin data classes include destructuring calls automatically
     val person = Person("Thomas", 40)
     val (name, age) = person
     println("$name is $age years old")
 
-    // Regular classes can add destructuring support by overloading the component operators
+    // Regular classes can add destructuring support by overloading the componentN operators
     val loc = Location(38.2, 110.8)
     val (lat, long) = loc
     println("Lat/Long = $lat/$long")
