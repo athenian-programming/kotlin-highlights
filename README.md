@@ -12,5 +12,5 @@
 * [Properties](src/main/kotlin/org/athenian/10-properties.kt)
 * [Extension Properties and Functions](src/main/kotlin/org/athenian/11-extensions.kt)
 * [Sequences](src/main/kotlin/org/athenian/12-sequences.kt)
-* [Destrucring](src/main/kotlin/org/athenian/13-destructuring.kt)
+* [Destructuring](src/main/kotlin/org/athenian/13-destructuring.kt)
 
