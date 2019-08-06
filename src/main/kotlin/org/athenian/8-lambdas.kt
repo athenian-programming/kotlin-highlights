@@ -1,31 +1,40 @@
 package org.athenian
 
-// Lambda without params
-val constant1: () -> Int = fun(): Int { return 4 }
-val constant2: () -> Int = { 4 }
-
-// Lambda with params
-val adder1: (Int, Int) -> Int = fun(a: Int, b: Int): Int { return a + b }
-val adder2: (Int, Int) -> Int = { a: Int, b: Int -> a + b }
-
-// Usage of it
-val double1: (Int) -> Int = { a: Int -> a * 2 }
-val double2: (Int) -> Int = { it * 2 }
-
-// Higher-order function
-fun twoIntFunc(
-    x: Int,
-    y: Int,
-    block: (Int, Int) -> Int
-): Int = block(x, y)
-
-
 fun main() {
+
+    // Function reference
+    fun returnConst(): Int {
+        return 5
+    }
+
+    val funcRef: () -> Int = ::returnConst
+
+    println("funcRef: ${funcRef()}")
+
+    // Lambdas without params
+    val constant1: () -> Int = fun(): Int { return 4 }
+    val constant2: () -> Int = { 4 }
+
     println("constant2(): ${constant2()}")
+
+    // Lambdas with params
+    val adder1: (Int, Int) -> Int = fun(a: Int, b: Int): Int { return a + b }
+    val adder2: (Int, Int) -> Int = { a: Int, b: Int -> a + b }
 
     println("adder2(4, 5): ${adder2(4, 5)}")
 
+    // Usage of it
+    val double1: (Int) -> Int = { a: Int -> a * 2 }
+    val double2: (Int) -> Int = { it * 2 }
+
     println("double2(8): ${double2(8)}")
+
+    // Higher-order function
+    fun twoIntFunc(
+        x: Int,
+        y: Int,
+        block: (Int, Int) -> Int
+    ): Int = block(x, y)
 
     println("twoIntFunc:")
     println(twoIntFunc(5, 6) { x, y -> x + y })
