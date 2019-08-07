@@ -29,7 +29,7 @@ fun main() {
 
     println("double2(8): ${double2(8)}")
 
-    // Higher-order function
+    // Higher-order function as parameter
     fun twoIntFunc(
         x: Int,
         y: Int,
@@ -39,5 +39,22 @@ fun main() {
     println("twoIntFunc:")
     println(twoIntFunc(5, 6) { x, y -> x + y })
     println(twoIntFunc(5, 6) { x, y -> x * y })
+
+    // Higher-order function as return type
+    fun receiptText(template: String): (Int) -> String {
+        return { amount -> template.replace("%", amount.toString()) }
+    }
+
+    println(receiptText("Bill total: $%")(87))
+
+    // Class inheriting from a lambda
+    class ReceiptText(val template: String) : (Int) -> String {
+        override fun invoke(amount: Int) = template.replace("%", amount.toString())
+    }
+
+    val receiptText = ReceiptText("Bill total: $%")
+    println(receiptText(55))
+    // or
+    println(ReceiptText("Bill total: $%")(44))
 }
 
