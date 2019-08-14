@@ -15,8 +15,6 @@ fun main() {
     val squared: FIntToInt = { it * it }
     println(squared(6))
 
-    fun dumpMap(map: StringMap) {
-        map.forEach { k, v -> println("Key: $k Val: $v") }
-    }
+    fun dumpMap(map: StringMap) = map.forEach { k, v -> println("Key: $k Val: $v") }
     dumpMap(mapOf("a" to "a val"))
 }
