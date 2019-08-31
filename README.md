@@ -13,4 +13,6 @@
 * [Extension Properties and Functions](src/main/kotlin/org/athenian/11-extensions.kt)
 * [Sequences](src/main/kotlin/org/athenian/12-sequences.kt)
 * [Destructuring](src/main/kotlin/org/athenian/13-destructuring.kt)
+* [Type Aliases](src/main/kotlin/org/athenian/14-typealiases.kt)
+* [Infix](src/main/kotlin/org/athenian/15-infix.kt)
 
