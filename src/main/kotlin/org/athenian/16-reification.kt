@@ -7,6 +7,7 @@ class NonFiction(name: String) : Book(name)
 
 inline fun <reified T : Book> findFirst(books: List<Book>): T =
     (books
+        .asSequence()
         .filter { it is T }
         .firstOrNull() ?: throw RuntimeException("Not found")) as T
 
