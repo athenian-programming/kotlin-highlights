@@ -15,4 +15,5 @@
 * [Destructuring](src/main/kotlin/org/athenian/13-destructuring.kt)
 * [Type Aliases](src/main/kotlin/org/athenian/14-typealiases.kt)
 * [Infix](src/main/kotlin/org/athenian/15-infix.kt)
-
+* [Reification](src/main/kotlin/org/athenian/16-reification.kt)
+* [Delegation](src/main/kotlin/org/athenian/17-delegation.kt)

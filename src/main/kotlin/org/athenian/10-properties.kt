@@ -4,7 +4,7 @@ import java.time.LocalDate
 
 // Primary constructor
 // Properties as params
-class Employee(val firstName: String, val lastName: String, private val birthDate: LocalDate) {
+class Student(val firstName: String, val lastName: String, private val birthDate: LocalDate) {
 
     var counter = 0
         private set
@@ -33,7 +33,7 @@ class Employee(val firstName: String, val lastName: String, private val birthDat
 }
 
 fun main() {
-    val p = Employee("Bill", "Smith", LocalDate.of(1980, 10, 31))
+    val p = Student("Bill", "Smith", LocalDate.of(1980, 10, 31))
 
     println("${p.fullName} (aka ${p.firstName}) is ${p.age} years old")
 
