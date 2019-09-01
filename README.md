@@ -17,3 +17,4 @@
 * [Infix](src/main/kotlin/org/athenian/15-infix.kt)
 * [Reification](src/main/kotlin/org/athenian/16-reification.kt)
 * [Class Delegation](src/main/kotlin/org/athenian/17-class-delegation.kt)
+* [Overloaded Operators](src/main/kotlin/org/athenian/18-overloaded-operators.kt)
