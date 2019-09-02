@@ -6,7 +6,7 @@ class Thing(val str: String = "") {
 
     operator fun plus(other: Int): Thing = Thing(str + other)
 
-    operator fun unaryMinus(): Thing = Thing(str.split(" ").dropLast(1).joinToString(" "))
+    operator fun dec(): Thing = Thing(str.split(" ").dropLast(1).joinToString(" "))
 
     override fun toString(): String = "Thing = $str"
 }
@@ -23,6 +23,6 @@ fun main() {
     t += 545
     println(t)
 
-    t = -t
+    t--
     println(t)
 }
