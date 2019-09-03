@@ -11,6 +11,8 @@ class Thing(val str: String = "") {
     override fun toString(): String = "Thing = $str"
 }
 
+operator fun Int.times(str: String) = List(this) { str }.joinToString("")
+
 fun main() {
     var t = Thing()
 
@@ -25,4 +27,7 @@ fun main() {
 
     t--
     println(t)
+
+    // Adding operators to existing types with extension function
+    println(3 * "Hello")
 }
