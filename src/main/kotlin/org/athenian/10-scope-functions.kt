@@ -56,4 +56,16 @@ fun main() {
                 it.desc()
             }
     println("$p5_desc\n")
+
+    // Can also be used in call chains
+    val numberList = mutableListOf<Double>()
+    numberList
+        .also { println("Populating the list") }
+        .apply {
+            add(2.71)
+            add(3.14)
+            add(1.0)
+        }
+        .also { println("Sorting the list") }
+        .sort()
 }

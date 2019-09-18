@@ -8,7 +8,7 @@
 * [Function and Method Args](src/main/kotlin/org/athenian/6-args.kt)
 * [Variable Delegates](src/main/kotlin/org/athenian/7-variable-delegates.kt)
 * [Lambdas and Higher-order Functions](src/main/kotlin/org/athenian/8-lambdas.kt)
-* [Chains](src/main/kotlin/org/athenian/9-chains.kt)
+* [Call Chains](src/main/kotlin/org/athenian/9-call-hains.kt)
 * [Scope Functions](src/main/kotlin/org/athenian/10-scope-functions.kt)
 * [Properties](src/main/kotlin/org/athenian/11-properties.kt)
 * [Extension Properties and Functions](src/main/kotlin/org/athenian/12-extensions.kt)
