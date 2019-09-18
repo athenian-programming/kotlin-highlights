@@ -2,13 +2,11 @@ package org.athenian
 
 // Named arguments -- improves readability for long arg lists
 // Default arguments
-fun reformat(
-    str: String,
-    normalizeCase: Boolean = true,
-    upperCaseFirstLetter: Boolean = true,
-    divideByCamelHumps: Boolean = false,
-    wordSeparator: Char = ' '
-) {
+fun reformat(str: String,
+             normalizeCase: Boolean = true,
+             upperCaseFirstLetter: Boolean = true,
+             divideByCamelHumps: Boolean = false,
+             wordSeparator: Char = ' ') {
     // ...
 }
 

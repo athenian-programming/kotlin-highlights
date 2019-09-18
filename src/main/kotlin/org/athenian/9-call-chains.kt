@@ -27,8 +27,7 @@ fun main() {
     (1..10)
         .onEach { println("Working on $it") }
         .take(5)
-        .map { "A string using $it" }
-        .onEach { println("Looking on $it") }
+        .map { it * 5 }
+        .mapIndexed { i, v -> "A string using $v at index $i" }
+        .onEach { println("Looking at [$it]") }
 }
-
-
