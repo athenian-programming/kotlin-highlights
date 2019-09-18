@@ -30,11 +30,9 @@ fun main() {
     println("double2(8): ${double2(8)}")
 
     // Higher-order function as parameter
-    fun twoIntFunc(
-        x: Int,
-        y: Int,
-        block: (Int, Int) -> Int
-    ): Int = block(x, y)
+    fun twoIntFunc(x: Int,
+                   y: Int,
+                   block: (Int, Int) -> Int): Int = block(x, y)
 
     println("twoIntFunc:")
     println(twoIntFunc(5, 6) { x, y -> x + y })

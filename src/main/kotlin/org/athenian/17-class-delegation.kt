@@ -19,14 +19,14 @@ class Employee(val programmer: Programmer) : Programmer by programmer {
 }
 
 fun main() {
-    val javaGuy = Employee(JavaProgrammer())
-    val csharpGuy = Employee(CSharpProgrammer())
+    val javaPerson = Employee(JavaProgrammer())
+    val csharpPerson = Employee(CSharpProgrammer())
 
-    println("Programmer is ${javaGuy.programmer.javaClass.simpleName}")
-    javaGuy.hack()
-    javaGuy.relax()
+    println("Programmer is ${javaPerson.programmer.javaClass.simpleName}")
+    javaPerson.hack()
+    javaPerson.relax()
 
-    println("Programmer is ${csharpGuy.programmer.javaClass.simpleName}")
-    csharpGuy.hack()
-    csharpGuy.relax()
+    println("Programmer is ${csharpPerson.programmer.javaClass.simpleName}")
+    csharpPerson.hack()
+    csharpPerson.relax()
 }

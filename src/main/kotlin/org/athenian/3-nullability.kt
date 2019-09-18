@@ -1,7 +1,6 @@
 package org.athenian
 
 fun main() {
-
     // Say good-bye to the dreaded NPE
     // Nullability is built into the type system
     var a: String = "Non-null string var"

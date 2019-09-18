@@ -2,7 +2,6 @@ package org.athenian
 
 // Named arguments -- improves readability for long arg lists
 // Default arguments
-
 fun reformat(
     str: String,
     normalizeCase: Boolean = true,

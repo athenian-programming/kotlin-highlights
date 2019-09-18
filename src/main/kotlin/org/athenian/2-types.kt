@@ -1,7 +1,6 @@
 package org.athenian
 
 fun main() {
-
     // Encouraged to think about mutability
     // Default to immutability with vals and vars
     var a: String = "A string value"

@@ -1,19 +1,19 @@
 package org.athenian
 
 fun doReMi(): Sequence<String> {
-    val notes = listOf("Do", "Re", "Mi", "Fa", "Sol", "La", "Ti", "Do")
     return sequence {
+        val notes = listOf("Do", "Re", "Mi", "Fa", "Sol", "La", "Ti", "Do")
         for (note in notes)
             yield(note)
     }
 }
 
-
 fun evenNumbers(max: Int) =
     sequence {
-        for (i in 0..max)
+        repeat(max) { i ->
             if (i % 2 == 0)
                 yield(i)
+        }
     }
 
 fun oddNumbers(max: Int): Sequence<Int> {

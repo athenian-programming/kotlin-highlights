@@ -14,7 +14,7 @@ fun main() {
             "Not equal"
         }
 
-    // No ternanry operator
+    // No ternary operator
     val lendesc = if ("not" in ifResult) "Contains not" else "Missing not"
 
     // when is a super switch

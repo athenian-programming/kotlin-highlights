@@ -24,7 +24,6 @@ operator fun RandomVals.component1() = randomVal1
 operator fun RandomVals.component2() = randomVal2
 operator fun RandomVals.component3() = randomVal1 + randomVal2
 
-
 fun main() {
     // Kotlin data classes include destructuring calls automatically
     val person = Person("Thomas", 40)
