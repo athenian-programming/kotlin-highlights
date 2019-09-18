@@ -23,5 +23,12 @@ fun main() {
 
     println(nonLambdaCalculation(intVals))
     println(lambdaCalculation(intVals))
+
+    (1..10)
+        .onEach { println("Working on $it") }
+        .take(5)
+        .map { "A string using $it" }
+        .onEach { println("Looking on $it") }
 }
+
 
