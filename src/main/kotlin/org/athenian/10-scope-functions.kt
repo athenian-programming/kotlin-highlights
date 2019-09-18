@@ -57,15 +57,16 @@ fun main() {
             }
     println("$p5_desc\n")
 
-    // Can also be used in call chains
+    // Scope functions be used in call chains
     val numberList = mutableListOf<Double>()
     numberList
-        .also { println("Populating the list") }
+        .also { println("Populating the list $it") }
         .apply {
             add(2.71)
             add(3.14)
             add(1.0)
         }
-        .also { println("Sorting the list") }
-        .sort()
+        .also { println("Sorting the list $it") }
+        .apply { sort() }
+        .also { println("Sorted the list $it") }
 }
