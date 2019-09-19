@@ -3,6 +3,11 @@ package org.athenian
 import java.text.SimpleDateFormat
 import java.util.*
 
+// See:
+// https://www.grokkingandroid.com/creating-kotlin-dsls/
+// https://www.kotlindevelopment.com/kotlin-dsl/
+// https://proandroiddev.com/writing-dsls-in-kotlin-part-2-cd9dcd0c4715
+
 fun main() {
 
     // Not a very approach

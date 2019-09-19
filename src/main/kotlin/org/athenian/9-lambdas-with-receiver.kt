@@ -1,5 +1,7 @@
 package org.athenian
 
+// See: https://proandroiddev.com/writing-dsls-in-kotlin-part-1-7f5d2193f277
+
 fun main() {
 
     data class Address(var street: String? = null, var city: String? = null)
