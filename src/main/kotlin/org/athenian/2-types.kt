@@ -8,7 +8,8 @@ fun main() {
 
     a = "Can be reassigned"
     // Read-only enforced
-    //b = "cannot be reassigned"
+    // b = "cannot be reassigned"
+
 
     // Type inference
     val t = "A String"
@@ -25,5 +26,3 @@ fun main() {
     val s: String = if (o is String) o else ""
     println(s)
 }
-
-
