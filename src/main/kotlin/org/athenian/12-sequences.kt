@@ -1,29 +1,31 @@
 package org.athenian
 
-fun doReMi(): Sequence<String> {
-    return sequence {
-        val notes = listOf("Do", "Re", "Mi", "Fa", "Sol", "La", "Ti", "Do")
-        for (note in notes)
-            yield(note)
-    }
-}
-
-fun evenNumbers(max: Int) =
-    sequence {
-        repeat(max) { i ->
-            if (i % 2 == 0)
-                yield(i)
-        }
-    }
-
-fun oddNumbers(max: Int): Sequence<Int> {
-    val evens = evenNumbers(max - 1)
-    return sequence {
-        evens.forEach { yield(it + 1) }
-    }
-}
-
 fun main() {
+
+    fun doReMi(): Sequence<String> =
+        sequence {
+            listOf("Do", "Re", "Mi", "Fa", "Sol", "La", "Ti", "Do").forEach { yield(it) }
+        }
+
+    fun evenNumbers(max: Int) =
+        sequence {
+            repeat(max) { i ->
+                if (i % 2 == 0)
+                    yield(i)
+            }
+            // or
+            /*
+            (0..max)
+                .filter{it % 2 == 0}
+                .forEach { yield(it) }
+            */
+        }
+
+    fun oddNumbers(max: Int): Sequence<Int> =
+        sequence {
+            evenNumbers(max - 1).forEach { yield(it + 1) }
+        }
+
     for (note in doReMi())
         println(note)
 
