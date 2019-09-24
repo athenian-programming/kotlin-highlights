@@ -2,19 +2,16 @@ package org.athenian
 
 fun main() {
 
-    // Function reference
-    fun returnConst(): Int {
-        return 5
+    // Generic function call
+    fun returnFour(): Int {
+        return 4
     }
-
-    val funcRef: () -> Int = ::returnConst
-
-    println("funcRef: ${funcRef()}")
 
     // Lambdas without params
     val constant1: () -> Int = fun(): Int { return 4 }
-    val constant2: () -> Int = { 4 }
+    println("constant1(): ${constant1()}")
 
+    val constant2: () -> Int = { 4 }
     println("constant2(): ${constant2()}")
 
     // Lambdas with params
@@ -54,5 +51,14 @@ fun main() {
     println(receiptText(55))
     // or
     println(ReceiptText("Bill total: $%")(44))
+
+    // Function reference
+    fun returnConst(): Int {
+        return 5
+    }
+
+    val funcRef: () -> Int = ::returnConst
+
+    println("funcRef: ${funcRef()}")
 }
 
