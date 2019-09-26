@@ -14,7 +14,7 @@ fun main() {
         a = b
 
     // Null propagation
-    a = b?.toUpperCase() ?: "Found a null value";
+    a = b?.toUpperCase()?.dropLast(4)?.drop(3) ?: "Found a null value";
 
     // Trust me, I know what I am doing -- all bets are off for NPE
     a = b!!
