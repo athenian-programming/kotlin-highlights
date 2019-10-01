@@ -28,3 +28,15 @@ fun main() {
 
     println("$ifResult and $whenResult and $lendesc")
 }
+
+fun ifReturn(str: String): Boolean {
+    if (str == "What")
+        return true
+    else if (str == "is")
+        return false
+    else if (str == "this" || str.length > 4)
+        return false
+    else
+        return true
+
+}
