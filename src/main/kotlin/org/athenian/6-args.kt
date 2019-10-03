@@ -13,6 +13,10 @@ fun reformat(str: String,
 fun func(i: Int = 5, j: Int = 6) = i * j
 
 fun main() {
+
+    reformat(str = "test")
+    reformat("test", upperCaseFirstLetter = false, normalizeCase = true)
+
     println("Result of func(3, 4) = ${func(3, 4)}")
     println("Result of func(i = 7, j = 4) = ${func(i = 7, j = 4)}")
     println("Result of func(i = 7) = ${func(i = 7)}")

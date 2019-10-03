@@ -1,5 +1,6 @@
 package org.athenian
 
+import java.io.IOException
 import java.time.LocalDate
 
 // Primary constructor
@@ -28,14 +29,14 @@ class Student(val firstName: String, val lastName: String, private val birthDate
             if (value >= 0)
                 field = value
             else
-                println("Ignoring negative balnce value $value")
+                throw IOException("Ignoring negative balance value $value")
         }
 }
 
 fun main() {
     val p = Student("Bill", "Smith", LocalDate.of(1980, 10, 31))
 
-    println("${p.fullName} (aka ${p.firstName}) is ${p.age} years old")
+    println("${p.title} ${p.fullName} (aka ${p.firstName}) is ${p.age} years old")
 
     p.balance = -4
     println("Balance = ${p.balance}")

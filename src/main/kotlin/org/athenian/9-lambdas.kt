@@ -10,6 +10,7 @@ fun main() {
     // Lambdas without params
     val constant1: () -> Int = fun(): Int { return 4 }
     println("constant1(): ${constant1()}")
+    println("constant1(): ${constant1.invoke()}")
 
     val constant2: () -> Int = { 4 }
     println("constant2(): ${constant2()}")
