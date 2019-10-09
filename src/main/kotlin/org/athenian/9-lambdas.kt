@@ -36,7 +36,50 @@ fun main() {
     println(twoIntFunc(5, 6) { x, y -> x + y })
     println(twoIntFunc(5, 6) { x, y -> x * y })
 
+    fun filterInts(nums: List<Int>, filter: (Int) -> Boolean): List<Int> {
+        val retval = mutableListOf<Int>()
+        for (i in nums)
+            if (filter(i))
+                retval += i
+        return retval
+    }
+
+    val evens = { i: Int -> i % 2 == 0 }
+
+    val odds = { i: Int -> i % 2 == 1 }
+
+    val nums = (0..20).toList()
+
+    println("Evens: ${filterInts(nums, evens)}")
+    println("Odds: ${filterInts(nums, odds)}")
+
+    println("Above 5: ${filterInts(nums, { i -> i > 5 })}")
+    println("Below 10: ${filterInts(nums, { it < 10 })}")
+
+
     // Higher-order function as return type
+    fun sayHello(): () -> Unit {
+        return { println("Hello") }
+    }
+
+    // No args
+    val greeting = sayHello()
+
+    greeting()
+    greeting.invoke()
+
+    // With an arg
+    fun sayHelloWithName(): (String) -> Unit {
+        return { name: String -> println("Hello $name") }
+    }
+
+    val greetingWithName = sayHelloWithName()
+
+    greetingWithName("Jin")
+    greetingWithName.invoke("Jin")
+
+
+
     fun receiptText(template: String): (Int) -> String {
         return { amount -> template.replace("%", amount.toString()) }
     }
