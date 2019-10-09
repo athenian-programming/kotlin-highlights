@@ -9,6 +9,7 @@ fun main() {
     data class Person(var name: String? = null, var age: Int? = null, var address: Address? = null)
 
     fun lambdaArg(): Person {
+
         // Lambda arg
         fun person(block: (Person) -> Unit): Person {
             val p = Person()
@@ -26,6 +27,7 @@ fun main() {
     }
 
     fun lambdaWithReceiverArg(): Person {
+
         // Lambda with receiver arg
         fun person(block: Person.() -> Unit): Person {
             val p = Person()

@@ -79,11 +79,12 @@ fun main() {
     greetingWithName.invoke("Jin")
 
 
-
+    // Derive return lambda from parameter
     fun receiptText(template: String): (Int) -> String {
         return { amount -> template.replace("%", amount.toString()) }
     }
 
+    println(receiptText("Bill total: $%").invoke(87))
     println(receiptText("Bill total: $%")(87))
 
     // Class inheriting from a lambda
