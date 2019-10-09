@@ -36,10 +36,10 @@ fun main() {
     println(twoIntFunc(5, 6) { x, y -> x + y })
     println(twoIntFunc(5, 6) { x, y -> x * y })
 
-    fun filterInts(nums: List<Int>, filter: (Int) -> Boolean): List<Int> {
+    fun filterInts(nums: List<Int>, block: (Int) -> Boolean): List<Int> {
         val retval = mutableListOf<Int>()
         for (i in nums)
-            if (filter(i))
+            if (block(i))
                 retval += i
         return retval
     }
@@ -56,7 +56,6 @@ fun main() {
     println("Above 5: ${filterInts(nums, { i -> i > 5 })}")
     println("Below 10: ${filterInts(nums, { it < 10 })}")
 
-
     // Higher-order function as return type
     fun sayHello(): () -> Unit {
         return { println("Hello") }
@@ -70,13 +69,13 @@ fun main() {
 
     // With an arg
     fun sayHelloWithName(): (String) -> Unit {
-        return { name: String -> println("Hello $name") }
+        return { name -> println("Hello $name") }
     }
 
     val greetingWithName = sayHelloWithName()
 
     greetingWithName("Jin")
-    greetingWithName.invoke("Jin")
+    greetingWithName.invoke("Mary")
 
 
     // Derive return lambda from parameter
@@ -89,13 +88,15 @@ fun main() {
 
     // Class inheriting from a lambda
     class ReceiptText(val template: String) : (Int) -> String {
-        override fun invoke(amount: Int) = template.replace("%", amount.toString())
+        override fun invoke(amount: Int): String {
+            return template.replace("%", amount.toString())
+        }
     }
 
     val receiptText = ReceiptText("Bill total: $%")
     println(receiptText(55))
     // or
-    println(ReceiptText("Bill total: $%")(44))
+    println(ReceiptText("Bill total: $%").invoke(44))
 
     // Function reference
     fun returnConst(): Int {
