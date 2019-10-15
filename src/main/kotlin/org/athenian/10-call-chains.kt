@@ -28,8 +28,9 @@ fun main() {
         .onEach { println("Working on $it") }
         .take(5)
         .map { it * 5 }
+        .onEach { println(it) }
         .mapIndexed { i, v -> "A string using $v at index $i" }
-        .onEach { println("Looking at [$it]") }
+        .forEach { println("Looking at [$it]") }
 
     val map = mutableMapOf<String, Int>("A" to 10, "B" to 11, "C" to 12)
 
