@@ -24,6 +24,16 @@ fun main() {
 
     //words.forEach { println(it.length) }
 
-    println(takeWhile)
+    val wordLengths = words.map { it.length }
+
+    val germanWords = "Der schnelle braune Fuchs springt über den faulen Hund".split(" ")
+
+    val matchedWords = words zip germanWords
+
+    val wordLengthAssociation = words.associateWith { it.length }
+
+    val wordsFlattened = listOf(words, germanWords).flatten()
+
+    println(wordsFlattened)
 }
 
