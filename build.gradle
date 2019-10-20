@@ -9,7 +9,7 @@ version '1.0-SNAPSHOT'
 sourceCompatibility = 1.8
 
 def loggingVersion = '1.7.6'
-def slf4jVersion = '1.7.28'
+def logbackVersion = '1.2.3'
 
 repositories {
     mavenCentral()
@@ -18,7 +18,7 @@ repositories {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     implementation "io.github.microutils:kotlin-logging:$loggingVersion"
-    implementation "ch.qos.logback:logback-classic:1.0.13"
+    implementation "ch.qos.logback:logback-classic:$logbackVersion"
 
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }
