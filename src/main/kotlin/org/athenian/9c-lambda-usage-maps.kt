@@ -6,7 +6,7 @@ fun main() {
 
     fun aVeryExpensiveMethod(): String {
         Thread.sleep(2000)
-        return "Something that was hard to produce"
+        return "Something that was expensive to produce"
     }
 
     val aMap = mutableMapOf<String, String>("A" to "Init value")
@@ -19,10 +19,9 @@ fun main() {
     println("Calling putIfAbsent() took $dur0 [$aMap]")
 
 
-    val (_, dur1) =
-        measureTimedValue {
-            aMap.computeIfAbsent("A", { aVeryExpensiveMethod() })
-        }
+    val (_, dur1) = measureTimedValue {
+        aMap.computeIfAbsent("A", { aVeryExpensiveMethod() })
+    }
 
     println("Calling computeIfAbsent() took $dur1 [$aMap]")
 

@@ -8,7 +8,7 @@ class MyClass() {
 
     fun aVeryExpensiveMethod(): String {
         Thread.sleep(2000)
-        return "Something that was hard to produce"
+        return "Something that was expensive to produce"
     }
 
     fun method1() {
@@ -24,12 +24,11 @@ class MyClass() {
     companion object : KLogging() {
         @JvmStatic
         fun main(args: Array<String>) {
-            val (vals, dur) =
-                measureTimedValue {
-                    val t = MyClass()
-                    t.method1()
-                    t.method2()
-                }
+            val (vals, dur) = measureTimedValue {
+                val t = MyClass()
+                t.method1()
+                t.method2()
+            }
             println("Calling methods took $dur")
         }
     }
