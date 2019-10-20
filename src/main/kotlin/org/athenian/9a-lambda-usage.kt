@@ -10,8 +10,10 @@ fun main() {
     }
 
     fun printValue(printIt: Boolean, block: () -> String) {
-        if (printIt)
-            println(block())
+        if (printIt) {
+            val str = block()
+            println(str)
+        }
     }
 
     fun printValue(printIt: Boolean, str: String) {
