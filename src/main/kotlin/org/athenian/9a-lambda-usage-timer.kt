@@ -25,4 +25,26 @@ fun main() {
     aVeryExpensiveCall2()
     val time1 = System.currentTimeMillis() - start1
     println("Calling methods took ${time1}ms")
+
+
+    fun myTimer(block: () -> Unit): Long {
+        val start = System.currentTimeMillis()
+        block()
+        return System.currentTimeMillis() - start
+    }
+
+    val t0 = myTimer {
+        aVeryExpensiveCall1()
+        aVeryExpensiveCall1()
+        aVeryExpensiveCall2()
+    }
+    println("Calling methods took ${t0}ms")
+
+    val t1 = myTimer {
+        aVeryExpensiveCall1()
+        aVeryExpensiveCall2()
+        aVeryExpensiveCall2()
+    }
+    println("Calling methods took ${t1}ms")
+
 }
