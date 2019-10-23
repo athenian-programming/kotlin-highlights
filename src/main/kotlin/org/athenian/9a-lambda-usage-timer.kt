@@ -12,7 +12,6 @@ fun main() {
         return "Something that was expensive to produce"
     }
 
-
     val start0 = System.currentTimeMillis()
     aVeryExpensiveCall1()
     aVeryExpensiveCall1()
