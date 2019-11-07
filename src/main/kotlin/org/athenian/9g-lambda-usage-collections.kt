@@ -7,8 +7,8 @@ fun main() {
     words.get(2)
     words.contains("quick")
 
-    val any = words.any { it.length > 3 }
-    val all = words.all { it.length > 3 }
+    val any = words.any { it.length > 4 }
+    val all = words.all { it.length > 4 }
     val none = words.none { it.length == 1 }
 
     val first = words.first { it.length == 3 }
@@ -17,6 +17,8 @@ fun main() {
     val count = words.count { it.contains("o") }
 
     val longWords = words.filter { it.length > 3 }
+
+    val convertedWords = words.map { it.toUpperCase() }
 
     val takeWhile = words.takeWhile { it != "over" }
 
