@@ -24,7 +24,7 @@ class Student(val firstName: String, val lastName: String, private val birthDate
         get() = birthDate.until(LocalDate.now()).years
 
     var balance = 0
-        set(value: Int) {
+        set(value) {
             counter++
             if (value >= 0)
                 field = value

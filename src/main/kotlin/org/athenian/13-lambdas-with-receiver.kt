@@ -17,13 +17,10 @@ fun main() {
             return p
         }
 
-        val p =
-            person {
-                it.name = "John"
-                it.age = 25
-            }
-
-        return p
+        return person {
+            it.name = "John"
+            it.age = 25
+        }
     }
 
     fun lambdaWithReceiverArg(): Person {
@@ -35,13 +32,10 @@ fun main() {
             return p
         }
 
-        val p =
-            person {
-                name = "Mary"
-                age = 26
-            }
-
-        return p
+        return person {
+            name = "Mary"
+            age = 26
+        }
     }
 
     fun embeddedLambdaWithReceiverArg(): Person {
@@ -52,17 +46,14 @@ fun main() {
             address = Address().apply(block)
         }
 
-        val p =
-            person {
-                name = "Tracey"
-                age = 21
-                address {
-                    street = "123 Main"
-                    city = "Houston"
-                }
+        return person {
+            name = "Tracey"
+            age = 21
+            address {
+                street = "123 Main"
+                city = "Houston"
             }
-
-        return p
+        }
     }
 
     println("Lambda Arg: ${lambdaArg()}")

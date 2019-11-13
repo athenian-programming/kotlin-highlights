@@ -3,7 +3,7 @@ package org.athenian
 import mu.KLogging
 import kotlin.time.measureTimedValue
 
-class MyClass() {
+class MyClass {
 
     fun aVeryExpensiveMethod(): String {
         Thread.sleep(2000)

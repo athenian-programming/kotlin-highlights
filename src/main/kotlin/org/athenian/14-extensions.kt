@@ -21,7 +21,7 @@ fun String.mixCase(): String {
 // Extension function for String with params
 fun String.halfCase(lowerFirst: Boolean = true): String {
     val firstHalf = this.slice(0..this.length / 2)
-    val secondHalf = this.slice(this.length / 2..this.length - 1)
+    val secondHalf = this.slice(this.length / 2 until this.length)
     return if (lowerFirst)
         firstHalf.toLowerCase() + secondHalf.toUpperCase()
     else

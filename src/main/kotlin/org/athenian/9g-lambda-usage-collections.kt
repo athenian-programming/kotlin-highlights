@@ -5,6 +5,7 @@ fun main() {
 
     words.count()
     words.get(2)
+    words[4]
     words.contains("quick")
 
     val any = words.any { it.length > 4 }

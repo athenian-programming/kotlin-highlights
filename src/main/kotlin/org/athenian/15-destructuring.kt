@@ -14,7 +14,7 @@ fun main() {
         operator fun component3() = "A string using $latitude and $longitude"
     }
 
-    class RandomVals() {
+    class RandomVals {
         val randomVal1: Int
             get() = Random.nextInt()
 

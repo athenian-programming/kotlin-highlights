@@ -9,7 +9,7 @@ fun main() {
         return "Something that was expensive to produce"
     }
 
-    val aMap = mutableMapOf<String, String>("A" to "Init value")
+    val aMap = mutableMapOf("A" to "Init value")
 
     val (_, dur0) =
         measureTimedValue {
@@ -20,7 +20,7 @@ fun main() {
 
 
     val (_, dur1) = measureTimedValue {
-        aMap.computeIfAbsent("A", { aVeryExpensiveMethod() })
+        aMap.computeIfAbsent("A") { aVeryExpensiveMethod() }
     }
 
     println("Calling computeIfAbsent() took $dur1 [$aMap]")

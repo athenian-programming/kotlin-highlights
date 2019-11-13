@@ -53,8 +53,8 @@ fun main() {
     println("Evens: ${filterInts(nums, evens)}")
     println("Odds: ${filterInts(nums, odds)}")
 
-    println("Above 5: ${filterInts(nums, { i -> i > 5 })}")
-    println("Below 10: ${filterInts(nums, { it < 10 })}")
+    println("Above 5: ${filterInts(nums) { i -> i > 5 }}")
+    println("Below 10: ${filterInts(nums) { it < 10 }}")
 
     // Higher-order function as return type
     fun sayHello(): () -> Unit {

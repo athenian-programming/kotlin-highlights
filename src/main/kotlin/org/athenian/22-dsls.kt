@@ -67,18 +67,15 @@ fun main() {
 
         fun person(block: PersonBuilder.() -> Unit): Person = PersonBuilder().apply(block).build()
 
-        val person =
-            person {
-                name = "John"
-                dateOfBirth = "1980-12-01"
-                address {
-                    street = "Main Street"
-                    number = 12
-                    city = "London"
-                }
+        return person {
+            name = "John"
+            dateOfBirth = "1980-12-01"
+            address {
+                street = "Main Street"
+                number = 12
+                city = "London"
             }
-
-        return person
+        }
     }
 
     println("Build example: ${buildExample()}")

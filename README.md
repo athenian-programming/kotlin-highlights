@@ -12,7 +12,7 @@
 * [Call Chains](src/main/kotlin/org/athenian/10-call-chains.kt)
 * [Sequences](src/main/kotlin/org/athenian/11-sequences.kt)
 * [Scope Functions](src/main/kotlin/org/athenian/12-scope-functions.kt)
-* [Lambdas with Receivers](src/main/kotlin/org/athenian/13-lambdas-with-receivers.kt)
+* [Lambdas with Receivers](src/main/kotlin/org/athenian/13-lambdas-with-receiver.kt)
 * [Extension Properties and Functions](src/main/kotlin/org/athenian/14-extensions.kt)
 * [Destructuring](src/main/kotlin/org/athenian/15-destructuring.kt)
 * [Variable Delegates](src/main/kotlin/org/athenian/16-variable-delegates.kt)

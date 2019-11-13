@@ -36,7 +36,7 @@ fun main() {
     val everyOther =
         doReMi()
             .mapIndexed { i, note -> if (i % 2 == 0) note else "" }
-            .filter { it.length > 0 }
+            .filter { it.isNotEmpty() }
             .toList()
     println("Every other note: $everyOther")
 
