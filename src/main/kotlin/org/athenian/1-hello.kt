@@ -8,24 +8,24 @@ package org.athenian
 // No checked exceptions
 
 fun main() {
-    // Type decls come after the variable and function
-    val hello: String = "Hello World"
+  // Type decls come after the variable and function
+  val hello: String = "Hello World"
 
-    // String interpolation
-    // No System.out prefix
-    println("I would like to say: $hello")
-    println("My greeting had a length of: ${hello.length}")
+  // String interpolation
+  // No System.out prefix
+  println("I would like to say: $hello")
+  println("My greeting had a length of: ${hello.length}")
 
-    // Sane treatment for Strings
-    println("Equal: ${"Hello World" == hello}")
-    println("Contains: ${"Hello" in hello}")
+  // Sane treatment for Strings
+  println("Equal: ${"Hello World" == hello}")
+  println("Contains: ${"Hello" in hello}")
 
-    // Support for multiline strings
-    val multi = """
+  // Support for multiline strings
+  val multi = """
         Kotlin supports multiline
         strings 
     """.trimIndent()
 
-    println(multi)
+  println(multi)
 }
 

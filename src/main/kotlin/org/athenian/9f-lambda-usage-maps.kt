@@ -4,26 +4,26 @@ import kotlin.time.measureTimedValue
 
 fun main() {
 
-    fun aVeryExpensiveMethod(): String {
-        Thread.sleep(2000)
-        return "Something that was expensive to produce"
+  fun aVeryExpensiveMethod(): String {
+    Thread.sleep(2000)
+    return "Something that was expensive to produce"
+  }
+
+  val aMap = mutableMapOf("A" to "Init value")
+
+  val (_, dur0) =
+    measureTimedValue {
+      aMap.putIfAbsent("A", aVeryExpensiveMethod())
     }
 
-    val aMap = mutableMapOf("A" to "Init value")
-
-    val (_, dur0) =
-        measureTimedValue {
-            aMap.putIfAbsent("A", aVeryExpensiveMethod())
-        }
-
-    println("Calling putIfAbsent() took $dur0 [$aMap]")
+  println("Calling putIfAbsent() took $dur0 [$aMap]")
 
 
-    val (_, dur1) = measureTimedValue {
-        aMap.computeIfAbsent("A") { aVeryExpensiveMethod() }
-    }
+  val (_, dur1) = measureTimedValue {
+    aMap.computeIfAbsent("A") { aVeryExpensiveMethod() }
+  }
 
-    println("Calling computeIfAbsent() took $dur1 [$aMap]")
+  println("Calling computeIfAbsent() took $dur1 [$aMap]")
 
 }
 

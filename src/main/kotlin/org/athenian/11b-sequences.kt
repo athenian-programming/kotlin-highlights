@@ -2,53 +2,54 @@ package org.athenian
 
 fun main() {
 
-    fun evenNumbers(max: Int) =
-        sequence {
-            repeat(max) { i ->
-                if (i % 2 == 0)
-                    yield(i)
-            }
+  fun evenNumbers(max: Int) =
+    sequence {
+      repeat(max) { i ->
+        if (i % 2 == 0)
+          yield(i)
+      }
+    }
+
+  val seq = evenNumbers(10)
+
+  for (v in seq)
+    println("Val $v")
+
+
+  val vals = evenNumbers(10).toList()
+  println("Even numbers <= 10: ${vals}")
+
+
+  fun evenNumbers2(max: Int) =
+    sequence {
+      (0..max)
+        .filter { it % 2 == 0 }
+        .forEach { yield(it) }
+    }
+
+  println("Even numbers <= 20: ${evenNumbers2(10).toList()}")
+
+  fun oddNumbers(max: Int): Sequence<Int> =
+    sequence {
+      evenNumbers(max - 1)
+        .forEach {
+          yield(it + 1)
         }
-
-    val seq = evenNumbers(10)
-
-    for (v in seq)
-        println("Val $v")
+    }
 
 
-    val vals = evenNumbers(10).toList()
-    println("Even numbers <= 10: ${vals}")
+  val reversedOdds =
+    oddNumbers(11)
+      .toList()
+      .reversed()
+      .joinToString(", ")
+  println("Odd numbers <= 11 reversed: $reversedOdds")
 
+  val zipped =
+    evenNumbers(6)
+      .map { it * it }
+      .zip(evenNumbers(6).map { it * it * it })
+      .joinToString(", ")
 
-    fun evenNumbers2(max: Int) =
-        sequence {
-            (0..max)
-                .filter { it % 2 == 0 }
-                .forEach { yield(it) }
-        }
-
-    println("Even numbers <= 20: ${evenNumbers2(10).toList()}")
-
-
-    fun oddNumbers(max: Int): Sequence<Int> =
-        sequence {
-            evenNumbers(max - 1).forEach { yield(it + 1) }
-        }
-
-
-    val reversedOdds =
-        oddNumbers(11)
-            .toList()
-            .reversed()
-            .joinToString(", ")
-    println("Odd numbers <= 11 reversed: $reversedOdds")
-
-
-    val zipped =
-        evenNumbers(6)
-            .map { it * it }
-            .zip(evenNumbers(6).map { it * it * it })
-            .joinToString(", ")
-
-    println("Zipped squares and cubes: $zipped")
+  println("Zipped squares and cubes: $zipped")
 }

@@ -4,61 +4,61 @@ package org.athenian
 
 fun main() {
 
-    data class Address(var street: String? = null, var city: String? = null)
+  data class Address(var street: String? = null, var city: String? = null)
 
-    data class Person(var name: String? = null, var age: Int? = null, var address: Address? = null)
+  data class Person(var name: String? = null, var age: Int? = null, var address: Address? = null)
 
-    fun lambdaArg(): Person {
+  fun lambdaArg(): Person {
 
-        // Lambda arg
-        fun person(block: (Person) -> Unit): Person {
-            val p = Person()
-            block(p)
-            return p
-        }
-
-        return person {
-            it.name = "John"
-            it.age = 25
-        }
+    // Lambda arg
+    fun person(block: (Person) -> Unit): Person {
+      val p = Person()
+      block(p)
+      return p
     }
 
-    fun lambdaWithReceiverArg(): Person {
+    return person {
+      it.name = "John"
+      it.age = 25
+    }
+  }
 
-        // Lambda with receiver arg
-        fun person(block: Person.() -> Unit): Person {
-            val p = Person()
-            p.block()
-            return p
-        }
+  fun lambdaWithReceiverArg(): Person {
 
-        return person {
-            name = "Mary"
-            age = 26
-        }
+    // Lambda with receiver arg
+    fun person(block: Person.() -> Unit): Person {
+      val p = Person()
+      p.block()
+      return p
     }
 
-    fun embeddedLambdaWithReceiverArg(): Person {
+    return person {
+      name = "Mary"
+      age = 26
+    }
+  }
 
-        fun person(block: Person.() -> Unit): Person = Person().apply(block)
+  fun embeddedLambdaWithReceiverArg(): Person {
 
-        fun Person.address(block: Address.() -> Unit) {
-            address = Address().apply(block)
-        }
+    fun person(block: Person.() -> Unit): Person = Person().apply(block)
 
-        return person {
-            name = "Tracey"
-            age = 21
-            address {
-                street = "123 Main"
-                city = "Houston"
-            }
-        }
+    fun Person.address(block: Address.() -> Unit) {
+      address = Address().apply(block)
     }
 
-    println("Lambda Arg: ${lambdaArg()}")
-    println("Lambda With Receiver Arg: ${lambdaWithReceiverArg()}")
-    println("Embedded Lambda With Receiver Arg: ${embeddedLambdaWithReceiverArg()}")
+    return person {
+      name = "Tracey"
+      age = 21
+      address {
+        street = "123 Main"
+        city = "Houston"
+      }
+    }
+  }
+
+  println("Lambda Arg: ${lambdaArg()}")
+  println("Lambda With Receiver Arg: ${lambdaWithReceiverArg()}")
+  println("Embedded Lambda With Receiver Arg: ${embeddedLambdaWithReceiverArg()}")
 }
 
 
