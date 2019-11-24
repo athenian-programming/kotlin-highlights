@@ -1,4 +1,4 @@
-# Kotlin Sequences1
+# Kotlin Sequences2
 
 
 ## Using an iterator to generate values
