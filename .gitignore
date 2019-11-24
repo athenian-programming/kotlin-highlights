@@ -1,5 +1,5 @@
-.idea
-site
+.idea/
+site/
 build
 .gradle
 
