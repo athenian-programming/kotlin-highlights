@@ -1,9 +1,9 @@
-# Kotlin Sequences3
+# Kotlin Sequences4
 
 
 ## Using an iterator to generate values
 
-<pre class="kotlin-code" theme="idea" indent="4" style="padding: 36px 0;"><code>
+<code class="kotlin-code" theme="idea" indent="4" style="padding: 36px 0;">
 fun main() {
 //sampleStart
 
@@ -22,7 +22,7 @@ fun main() {
 
 //sampleEnd
 }
-</code></pre>
+</code>
 
 
 ## Using a for loop to generate values
