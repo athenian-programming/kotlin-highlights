@@ -1,13 +1,12 @@
-# Kotlin Sequences2
+# Kotlin Sequences3
 
 
 ## Using an iterator to generate values
-<pre class="kotlin-code" theme="idea" indent="4" style="padding: 36px 0;">
-<code>
+<pre class="kotlin-code" theme="idea" indent="4" style="padding: 36px 0;"><code>
 fun main() {
 //sampleStart
 
-  val doReMi: Sequence&lt;String&gt; =
+  val doReMi: Sequence&lt;String> =
     sequence {
       listOf("Do", "Re", "Mi", "Fa", "Sol", "La", "Ti", "Do")
         .forEach {
@@ -15,18 +14,18 @@ fun main() {
         }
     }
 
-  val iter: Iterator&lt;String&gt; = doReMi.iterator()
+  val iter: Iterator&lt;String> = doReMi.iterator()
   println("Note: ${iter.next()}")
   println("Note: ${iter.next()}")
   println("Note: ${iter.next()}")
 
 //sampleEnd
 }
-</code>
+</code></pre>
 
 
 ## Using a for loop to generate values
-<code>
+<pre class="kotlin-code" theme="idea" indent="4" style="padding: 36px 0;"><code>
 fun main() {
 //sampleStart
 
@@ -43,10 +42,10 @@ fun main() {
 
 //sampleEnd
 }
-</code>
+</code></pre>
 
 ## Using a Sequence in a call chain
-<code>
+<pre class="kotlin-code" theme="idea" indent="4" style="padding: 36px 0;"><code>
 fun main() {
 //sampleStart
 
@@ -68,5 +67,4 @@ fun main() {
 
 //sampleEnd
 }
-</code>
-</pre>
+</code></pre>
