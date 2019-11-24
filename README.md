@@ -10,7 +10,7 @@
 * [Properties](src/main/kotlin/org/athenian/8-properties.kt)
 * [Lambdas and Higher-order Functions](src/main/kotlin/org/athenian/9-lambdas.kt)
 * [Call Chains](src/main/kotlin/org/athenian/10-call-chains.kt)
-* [Sequences](src/main/kotlin/org/athenian/11-sequences.kt)
+* [Sequences](src/main/kotlin/org/athenian/11a-sequences.kt)
 * [Scope Functions](src/main/kotlin/org/athenian/12-scope-functions.kt)
 * [Lambdas with Receivers](src/main/kotlin/org/athenian/13-lambdas-with-receiver.kt)
 * [Extension Properties and Functions](src/main/kotlin/org/athenian/14-extensions.kt)

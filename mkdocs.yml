@@ -14,6 +14,7 @@ nav:
               - Part 1: sequences1.md
               - Part 2: sequences2.md
               - Part 3: sequences3.md
+          - Scope Functions: scope-functions.md
 
 theme:
   name: 'material'

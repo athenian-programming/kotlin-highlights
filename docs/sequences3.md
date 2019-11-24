@@ -51,7 +51,7 @@ fun main() {
 </div>
 
 
-## Fibonacci 1 
+## Fibonacci Pairs
 
 <div class="kotlin-code">
 fun main() {
@@ -68,7 +68,7 @@ fun main() {
 }
 </div>
 
-## Fibonacci 2
+## Fibonacci Sequence
 
 <div class="kotlin-code">
 fun main() {

@@ -1,64 +1,68 @@
 package org.athenian
 
 fun main() {
-  class Person(val name: String, var level: Int) {
-    fun increaseLevel() {
-      level++
-    }
-
-    fun desc(): String {
-      return "$name is the name and $level is the level"
-    }
-  }
+  data class Person(var first: String = "", var last: String = "", var age: Int = 0)
 
   // Without a scope function
-  val p1 = Person("Mary", 8)
-  println("${p1.name} is a level ${p1.level}")
-  p1.increaseLevel()
-  println("${p1.name} is now a level ${p1.level}\n")
+  val p1 = Person()
+  p1.first = "Mary"
+  p1.last = "Jones"
+  p1.age = 22
+  println(p1)
 
-  // With apply
-  val p2 =
-    Person("Bill", 7)
+  // With function
+  val p2: Person = Person()
+  with(p2) {
+    first = "Anh"
+    last = "Truong"
+    age = 12
+  }
+  println(p2)
+
+  // Apply function
+  val p3: Person =
+    Person()
       .apply {
-        println("$name is a level $level")
-        increaseLevel()
-        println("$name is now a level $level\n")
+        first = "Patty"
+        last = "Smith"
+        age = 5
       }
+  println(p3)
 
-  // With also
-  val p3 =
-    Person("Frank", 12)
+  // Also function
+  val p4: Person =
+    Person()
       .also {
-        println("${it.name} is a level ${it.level}")
-        it.increaseLevel()
-        println("${it.name} is now a level ${it.level}\n")
+        it.first = "Mindy"
+        it.last = "Nyberg"
+        it.age = 42
       }
+  println(p4)
 
-  // With run
-  val p4_desc =
-    Person("Theresa", 14)
+  // Run function
+  val p5: String =
+    Person()
       .run {
-        println("$name is a level $level")
-        increaseLevel()
-        println("$name is now a level $level")
-        desc()
+        first = "Bill"
+        last = "Jackson"
+        age = 42
+        toString().toUpperCase()
       }
-  println("$p4_desc\n")
+  println(p5)
 
-  // With let
-  val p5_desc =
-    Person("Ron", 4)
+  // Let function
+  val p6: String =
+    Person()
       .let {
-        println("${it.name} is a level ${it.level}")
-        it.increaseLevel()
-        println("${it.name} is now a level ${it.level}")
-        it.desc()
+        it.first = "Mindy"
+        it.last = "Nyberg"
+        it.age = 42
+        it.toString().toLowerCase()
       }
-  println("$p5_desc\n")
+  println(p6)
 
   // Scope functions be used in call chains
-  val numberList = mutableListOf<Double>()
+  val numberList: MutableList<Double> = mutableListOf()
   numberList
     .also { println("Populating the list $it") }
     .apply {
