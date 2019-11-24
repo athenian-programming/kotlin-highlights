@@ -11,7 +11,9 @@ nav:
   - Languages:
       - Kotlin:
           - Sequences:
-              - Intro: intro-sequences.md
+              - Part 1: sequences1.md
+              - Part 2: sequences2.md
+              - Part 3: sequences3.md
 
 theme:
   name: 'material'
