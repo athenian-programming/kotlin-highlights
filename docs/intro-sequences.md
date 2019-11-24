@@ -1,4 +1,4 @@
-# Kotlin Sequences2
+# Kotlin Sequences
 
 
 ## Using an iterator to generate values
@@ -27,7 +27,7 @@ fun main() {
 
 ## Using a for loop to generate values
 
-<pre class="kotlin-code" theme="idea" indent="4" style="padding: 36px 0;"><code>
+<pre class="kotlin-code"><code>
 fun main() {
 //sampleStart
 
@@ -48,7 +48,7 @@ fun main() {
 
 ## Using a Sequence in a call chain
 
-<pre class="kotlin-code" theme="idea" indent="4" style="padding: 36px 0;"><code>
+<pre class="kotlin-code"><code>
 fun main() {
 //sampleStart
 
