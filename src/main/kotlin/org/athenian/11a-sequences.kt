@@ -2,7 +2,7 @@ package org.athenian
 
 fun main() {
 
-  val doReMi =
+  val doReMi: Sequence<String> =
     sequence {
       listOf("Do", "Re", "Mi", "Fa", "Sol", "La", "Ti", "Do")
         .forEach {
@@ -10,7 +10,7 @@ fun main() {
         }
     }
 
-  val iter = doReMi.iterator()
+  val iter: Iterator<String> = doReMi.iterator()
   println("Note: ${iter.next()}")
   println("Note: ${iter.next()}")
   println("Note: ${iter.next()}")
@@ -19,7 +19,7 @@ fun main() {
     println("Note: $note")
 
 
-  val everyOther =
+  val everyOther: List<String> =
     doReMi
       .mapIndexed { i, note -> if (i % 2 == 0) note else "" }
       .filter { it.isNotEmpty() }

@@ -30,8 +30,6 @@ fun main() {
 
   println(lambdaCalculation(intVals))
 
-  //System.exit(1)
-
   (1..10)
     .onEach { println("Working on $it") }
     .take(5)
@@ -65,4 +63,10 @@ fun main() {
   println("Keys: ${map.keys}")
   println("Values: ${map.values}")
   println("Filter: ${map.filter { entry -> entry.key != "B" }}")
+
+  val doubledUp1 = (1..10).map { listOf(it, it) }
+  println("Doubled up1: $doubledUp1")
+
+  val doubledUp2 = (1..10).flatMap { listOf(it, it) }
+  println("Doubled up2: $doubledUp2")
 }
