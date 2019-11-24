@@ -1,4 +1,4 @@
-# Kotlin Sequences3
+# Kotlin Sequences1
 
 
 ## Using an iterator to generate values
@@ -6,7 +6,7 @@
 fun main() {
 //sampleStart
 
-  val doReMi: Sequence&lt;String> =
+  val doReMi =
     sequence {
       listOf("Do", "Re", "Mi", "Fa", "Sol", "La", "Ti", "Do")
         .forEach {
@@ -14,7 +14,7 @@ fun main() {
         }
     }
 
-  val iter: Iterator&lt;String> = doReMi.iterator()
+  val iter = doReMi.iterator()
   println("Note: ${iter.next()}")
   println("Note: ${iter.next()}")
   println("Note: ${iter.next()}")
