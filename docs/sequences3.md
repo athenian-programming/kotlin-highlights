@@ -1,6 +1,6 @@
 # Kotlin Sequences 3
 
-## Simple use of `sequence {}`
+## Simple use of `sequence {}` block
 
 <div class="kotlin-code">
 fun main() {
@@ -16,7 +16,7 @@ fun main() {
 </div>
 
 
-## Simple use of `generateSequence {}`
+## Simple use of `generateSequence {}` block
 
 <div class="kotlin-code">
 fun main() {
@@ -34,7 +34,7 @@ fun main() {
 </div>
 
 
-## Using a call chain within a `generateSequence {}`
+## Using a call chain with a `generateSequence {}` block
 
 <div class="kotlin-code">
 fun main() {
@@ -51,7 +51,7 @@ fun main() {
 </div>
 
 
-## Fibonacci 1
+## Fibonacci 1 
 
 <div class="kotlin-code">
 fun main() {
