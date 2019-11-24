@@ -16,8 +16,6 @@ nav:
 theme:
   name: 'material'
   custom_dir: 'docs/custom'
-  extra_css:
-    - 'stylesheets/extra.css'
   # Don't include MkDocs' JavaScript
   include_search_page: false
   search_index_only: true
