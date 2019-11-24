@@ -4,9 +4,8 @@ fun main() {
 
   fun evenNumbers(max: Int): Sequence<Int> =
     sequence {
-      repeat(max) { i ->
-        if (i % 2 == 0)
-          yield(i)
+      repeat(max) { i: Int ->
+        if (i % 2 == 0) yield(i)
       }
     }
 
@@ -35,19 +34,21 @@ fun main() {
         }
     }
 
+  println("Odd numbers <= 20: ${oddNumbers(10).toList()}")
 
   val reversedOdds: String =
     oddNumbers(11)
       .toList()
       .reversed()
+      //.shuffled()
       .joinToString(", ")
   println("Odd numbers <= 11 reversed: $reversedOdds")
 
   val zipped: String =
     evenNumbers(6)
       .map { it * it }
-      .zip(evenNumbers(6).map { it * it * it })
+      .zip(oddNumbers(6).map { it * it * it })
       .joinToString(", ")
 
-  println("Zipped squares and cubes: $zipped")
+  println("Zipped squared evens and cubed odds: $zipped")
 }
