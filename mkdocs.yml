@@ -1,0 +1,57 @@
+site_name: Athenian Programming
+site_url: http://www.athenian-programming.org
+site_description: Athenian Programming Documentation
+site_author: Athenian Programming Team
+
+repo_url: https://github.com//athenian-programming/kotlin-highlights
+repo_name: 'GitHub Home'
+
+nav:
+  - Home: index.md
+  - Languages:
+      - Kotlin:
+          - Sequences: sequences.md
+
+theme:
+  name: 'material'
+  custom_dir: 'custom'
+  # Don't include MkDocs' JavaScript
+  include_search_page: false
+  search_index_only: true
+  language: en
+  feature:
+    tabs: false
+  palette:
+    primary: indigo
+    accent: indigo
+  font:
+    text: Roboto
+    code: Roboto Mono
+  logo: 'images/owls.jpg'
+  favicon: 'assets/images/favicon.ico'
+
+markdown_extensions:
+  - admonition
+  - codehilite:
+      linenums: true
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.critic
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  - pymdownx.inlinehilite
+  - pymdownx.magiclink
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+
+google_analytics: ['UA-153210099-1', 'auto']
+
