@@ -10,7 +10,8 @@ nav:
   - Home: index.md
   - Languages:
       - Kotlin:
-          - Sequences: sequences.md
+          - Sequences:
+              - Intro: intro-sequences.md
 
 theme:
   name: 'material'
