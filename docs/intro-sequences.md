@@ -6,7 +6,7 @@
 fun main() {
 //sampleStart
 
-  val doReMi: Sequence<String> =
+  val doReMi: Sequence&lt;String =
     sequence {
       listOf("Do", "Re", "Mi", "Fa", "Sol", "La", "Ti", "Do")
         .forEach {
@@ -14,7 +14,7 @@ fun main() {
         }
     }
 
-  val iter: Iterator<String> = doReMi.iterator()
+  val iter: Iterator&lt;String> = doReMi.iterator()
   println("Note: ${iter.next()}")
   println("Note: ${iter.next()}")
   println("Note: ${iter.next()}")

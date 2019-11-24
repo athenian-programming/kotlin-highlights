@@ -2,7 +2,7 @@ package org.athenian
 
 fun main() {
 
-  fun evenNumbers(max: Int) =
+  fun evenNumbers(max: Int): Sequence<Int> =
     sequence {
       repeat(max) { i ->
         if (i % 2 == 0)
@@ -10,17 +10,15 @@ fun main() {
       }
     }
 
-  val seq = evenNumbers(10)
-
-  for (v in seq)
+  for (v in evenNumbers(10))
     println("Val $v")
 
 
-  val vals = evenNumbers(10).toList()
+  val vals: List<Int> = evenNumbers(10).toList()
   println("Even numbers <= 10: ${vals}")
 
 
-  fun evenNumbers2(max: Int) =
+  fun evenNumbers2(max: Int): Sequence<Int> =
     sequence {
       (0..max)
         .filter { it % 2 == 0 }
@@ -38,14 +36,14 @@ fun main() {
     }
 
 
-  val reversedOdds =
+  val reversedOdds: String =
     oddNumbers(11)
       .toList()
       .reversed()
       .joinToString(", ")
   println("Odd numbers <= 11 reversed: $reversedOdds")
 
-  val zipped =
+  val zipped: String =
     evenNumbers(6)
       .map { it * it }
       .zip(evenNumbers(6).map { it * it * it })
