@@ -53,6 +53,8 @@ fun main() {
 
 ## Miscellaneous sequence usage
 
+* How would you choose randomized instead of reversed in reverseOdds?
+
 <div class="kotlin-code">
 fun main() {
   fun evenNumbers(max: Int): Sequence&lt;Int> =
@@ -75,7 +77,6 @@ fun main() {
     oddNumbers(11)
       .toList()
       .reversed()
-      //.shuffled()
       .joinToString(", ")
   println("Odd numbers <= 11 reversed: $reversedOdds")
 

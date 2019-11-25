@@ -2,17 +2,18 @@ package org.athenian
 
 fun main() {
 
-  val seqCount1: Sequence<Int> =
+
+  val seqCount: Sequence<Int> =
     sequence {
       (0..10).forEach { yield(it) }
     }
 
-  println(seqCount1.toList())
+  println(seqCount.toList())
 
 
   val items: List<Int> = (0..10).toList()
   var cnt = 0
-  val seqCount2: Sequence<Int> =
+  val genSeqCount: Sequence<Int> =
     generateSequence {
       if (cnt <= 10)
         items[cnt++]
@@ -20,7 +21,7 @@ fun main() {
         null
     }
 
-  println(seqCount2.toList())
+  println(genSeqCount.toList())
 
   var count = 0
   val countUp: Sequence<Int> =
@@ -29,9 +30,17 @@ fun main() {
     }
   println(countUp.toList())
 
+
+  val seededGenSeqCount: Sequence<Int> =
+    generateSequence(0) {
+      it + 1
+    }
+
+  println(seededGenSeqCount.take(11).toList())
+
+
   // Borrowed from: https://medium.com/@hadiyarajesh/power-of-kotlin-generate-fibonacci-series-in-6-lines-of-code-with-lambdas-and-higher-order-91b85998cab7
 
-  // Calculating Fn  = Fn-1 + Fn-2 and mapping to return Pair<Int,Int>
   val fibonacciPairs: Sequence<Pair<Int, Int>> =
     generateSequence(Pair(0, 1)) {
       Pair(it.second, it.first + it.second)

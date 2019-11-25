@@ -18,23 +18,26 @@ fun main() {
 
 ## Simple use of `generateSequence {}` block
 
+* No explicit `yield` with `generateSequence` block
+* Sequence ends on null
+
 <div class="kotlin-code">
 fun main() {
 //sampleStart
   val items: List&lt;Int> = (0..10).toList()
   var cnt = 0
-  val seqCount: Sequence&lt;Int> =
+  val genSeqCount: Sequence&lt;Int> =
     generateSequence {
       if (cnt <= 10) items[cnt++] else null
     }
 
-  println(seqCount.toList())
+  println(genSeqCount.toList())
 //sampleEnd
 }
 </div>
 
 
-## Using a call chain with a `generateSequence {}` block
+## Call chain with a `generateSequence {}` block
 
 <div class="kotlin-code">
 fun main() {
@@ -50,8 +53,27 @@ fun main() {
 }
 </div>
 
+## Seeded `generateSequence {}` block
 
-## Fibonacci Pairs
+* Seed value used in initial call, subsequent calls use the most recent return value.
+
+<div class="kotlin-code">
+fun main() {
+//sampleStart
+  val seededGenSeqCount: Sequence&lt;Int> =
+    generateSequence(0) {
+      it + 1
+    }
+
+  println(seededGenSeqCount.take(11).toList())
+//sampleEnd
+}
+</div>
+
+
+## Fibonacci Pairs with seeded `generateSequence {}` block
+
+* Fn = Fn-1 + Fn-2 
 
 <div class="kotlin-code">
 fun main() {
@@ -68,7 +90,7 @@ fun main() {
 }
 </div>
 
-## Fibonacci Sequence
+## Fibonacci Sequence from Fibonacci Pairs
 
 <div class="kotlin-code">
 fun main() {
