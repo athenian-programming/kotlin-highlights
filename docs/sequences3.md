@@ -31,7 +31,7 @@ fun main() {
       }
     }
 
-  println("Fibonacci numbers: ${fibonacciSeq().take(10).joinToString()}")
+  println("Fibonacci numbers: ${fibonacciSeq().take(15).joinToString()}")
 //sampleEnd
 }
 </div>
@@ -104,9 +104,9 @@ fun main() {
       Pair(it.second, it.first + it.second)
     }
 
-  println("Fibonacci pairs: ${fibonacciPairs.take(10).joinToString("\n")}")
+  println("Fibonacci pairs: ${fibonacciPairs.take(15).joinToString("\n")}")
   
-  //println("Fibonacci numbers: ${fibonacciPairs.take(10).map { it.first }.joinToString()}")
+  //println("Fibonacci numbers: ${fibonacciPairs.take(15).map { it.first }.joinToString()}")
 //sampleEnd
 }
 </div>
@@ -123,7 +123,7 @@ fun main() {
 
   val fibonacciSequence: Sequence&lt;Int> = fibonacciPairs.map { it.first }
 
-  println("Fibonacci numbers: ${fibonacciSequence.take(10).joinToString()}")
+  println("Fibonacci numbers: ${fibonacciSequence.take(15).joinToString()}")
 //sampleEnd
 }
 </div>
