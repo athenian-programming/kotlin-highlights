@@ -58,7 +58,7 @@ fun main() {
 </div>
 
 
-## Call chain with a `generateSequence {}` block
+## Predicate with a `generateSequence {}` block
 
 <div class="kotlin-code">
 fun main() {

@@ -51,7 +51,7 @@ fun main() {
 </div>
 
 
-## Miscellaneous sequence usage
+## Combining sequences
 
 * How would you choose randomized instead of reversed in reverseOdds?
 
