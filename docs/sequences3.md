@@ -15,6 +15,27 @@ fun main() {
 }
 </div>
 
+## Fibonacci Pairs with seeded `sequence {}` block
+
+* Fn = Fn-1 + Fn-2 
+
+<div class="kotlin-code">
+fun main() {
+//sampleStart
+  fun fibonacciSeq() =
+    sequence {
+      var terms = Pair(0, 1)
+      while (true) {
+        yield(terms.first)
+        terms = Pair(terms.second, terms.first + terms.second)
+      }
+    }
+
+  println("Fibonacci numbers: ${fibonacciSeq().take(10).joinToString()}")
+//sampleEnd
+}
+</div>
+
 
 ## Simple use of `generateSequence {}` block
 

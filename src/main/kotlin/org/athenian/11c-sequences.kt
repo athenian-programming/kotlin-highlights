@@ -2,7 +2,6 @@ package org.athenian
 
 fun main() {
 
-
   val seqCount: Sequence<Int> =
     sequence {
       (0..10).forEach { yield(it) }
@@ -10,6 +9,16 @@ fun main() {
 
   println(seqCount.toList())
 
+  fun fibonacciSeq() =
+    sequence {
+      var terms = Pair(0, 1)
+      while (true) {
+        yield(terms.first)
+        terms = Pair(terms.second, terms.first + terms.second)
+      }
+    }
+
+  println("Fibonacci numbers: ${fibonacciSeq().take(10).joinToString()}")
 
   val items: List<Int> = (0..10).toList()
   var cnt = 0
@@ -37,7 +46,6 @@ fun main() {
     }
 
   println(seededGenSeqCount.take(11).toList())
-
 
   // Borrowed from: https://medium.com/@hadiyarajesh/power-of-kotlin-generate-fibonacci-series-in-6-lines-of-code-with-lambdas-and-higher-order-91b85998cab7
 
