@@ -17,7 +17,7 @@ fun main() {
 
 ## Fibonacci Pairs with seeded `sequence {}` block
 
-* Fn = Fn-1 + Fn-2 
+* F(n) = F(n-1) + F(n-2) 
 
 <div class="kotlin-code">
 fun main() {
@@ -94,7 +94,7 @@ fun main() {
 
 ## Fibonacci Pairs with seeded `generateSequence {}` block
 
-* Fn = Fn-1 + Fn-2 
+* F(n) = F(n-1) + F(n-2) 
 
 <div class="kotlin-code">
 fun main() {
