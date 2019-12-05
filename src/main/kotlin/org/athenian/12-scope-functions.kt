@@ -21,44 +21,40 @@ fun main() {
 
   // Apply function
   val p3: Person =
-    Person()
-      .apply {
-        first = "Patty"
-        last = "Smith"
-        age = 5
-      }
+    Person().apply {
+      first = "Patty"
+      last = "Smith"
+      age = 5
+    }
   println(p3)
 
   // Also function
   val p4: Person =
-    Person()
-      .also {
-        it.first = "Mindy"
-        it.last = "Nyberg"
-        it.age = 42
-      }
+    Person().also { p ->
+      p.first = "Mindy"
+      p.last = "Nyberg"
+      p.age = 42
+    }
   println(p4)
 
   // Run function
   val p5: String =
-    Person()
-      .run {
-        first = "Bill"
-        last = "Jackson"
-        age = 42
-        toString().toUpperCase()
-      }
+    Person().run {
+      first = "Bill"
+      last = "Jackson"
+      age = 42
+      toString().toUpperCase()
+    }
   println(p5)
 
   // Let function
   val p6: String =
-    Person()
-      .let {
-        it.first = "Mindy"
-        it.last = "Nyberg"
-        it.age = 42
-        it.toString().toLowerCase()
-      }
+    Person().let {
+      it.first = "Mindy"
+      it.last = "Nyberg"
+      it.age = 42
+      it.toString().toLowerCase()
+    }
   println(p6)
 
   // Scope functions be used in call chains

@@ -16,5 +16,6 @@ public class Examples {
                         .setLast("Mason")
                         .setAge(35);
         System.out.println(fp);
+
     }
 }
