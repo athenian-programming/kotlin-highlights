@@ -1,5 +1,6 @@
 package org.athenian
 
+import kotlin.properties.Delegates
 import kotlin.reflect.KProperty
 
 fun main() {
@@ -15,7 +16,9 @@ fun main() {
   }
 
   class DelegateExample() {
-    var evenNums: Int by EventNumbersOnly()
+    var evenNums: Int by Delegates.observable(0) { prop, old, new ->
+      require(new % 2 != 0) { "Even numbers only please!" }
+    }
   }
 
   DelegateExample()

@@ -10,9 +10,9 @@ nav:
   - Home: index.md
   - Kotlin:
       - Sequences:
-          - sequence {}: sequences1.md
-          - Combining Sequences: sequences2.md
-          - generateSequence {}: sequences3.md
+          - sequence {}: sequence.md
+          - Combining Sequences: combining-sequences.md
+          - generateSequence {}: generate-sequence.md
       - Scope Functions: scope-functions.md
       - Instance Variable Delegates:
           - Map Delegate: map-delegate.md

@@ -17,7 +17,7 @@
 * [Lambdas with Receivers](src/main/kotlin/org/athenian/13-lambdas-with-receiver.kt)
 * [Extension Properties and Functions](src/main/kotlin/org/athenian/14-extensions.kt)
 * [Destructuring](src/main/kotlin/org/athenian/15-destructuring.kt/)
-* [Instance Variable Delegates](https://athenian-kotlin-examples.com/verification-delegate/)
+* [Variable Delegates](https://athenian-kotlin-examples.com/verification-delegate/)
 * [Type Aliases](src/main/kotlin/org/athenian/17-typealiases.kt)
 * [Infix](src/main/kotlin/org/athenian/18-infix.kt)
 * [Reification](src/main/kotlin/org/athenian/19-reification.kt)
