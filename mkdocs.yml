@@ -8,15 +8,17 @@ repo_name: 'GitHub Home'
 
 nav:
   - Home: index.md
-  - Languages:
-      - Kotlin:
-          - Sequences:
-              - sequence {}: sequences1.md
-              - Combining Sequences: sequences2.md
-              - generateSequence {}: sequences3.md
-          - Scope Functions: scope-functions.md
-          - Variable Delegates:
-              - Lazy Delegates: lazy-delegate.md
+  - Kotlin:
+      - Sequences:
+          - sequence {}: sequences1.md
+          - Combining Sequences: sequences2.md
+          - generateSequence {}: sequences3.md
+      - Scope Functions: scope-functions.md
+      - Instance Variable Delegates:
+          - Verification Delegate: verification-delegate.md
+          - Manager Delegate: manager-delegate.md
+          - Lazy Delegate: lazy-delegate.md
+          - Map Delegate: map-delegate.md
 
 theme:
   name: 'material'
