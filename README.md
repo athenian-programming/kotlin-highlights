@@ -1,6 +1,6 @@
 # Kotlin Highlights
 
-[Interactive Examples](https://kotlin-examples.netlify.com)
+[Interactive Examples](https://kotlin-highlights.netlify.com)
 
 * [Hello World](src/main/kotlin/org/athenian/1-hello.kt)
 * [Type Basics](src/main/kotlin/org/athenian/2-types.kt)
