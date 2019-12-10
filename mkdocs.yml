@@ -11,11 +11,12 @@ nav:
   - Languages:
       - Kotlin:
           - Sequences:
-              - Part 1: sequences1.md
-              - Part 2: sequences2.md
-              - Part 3: sequences3.md
+              - sequence {}: sequences1.md
+              - Combining Sequences: sequences2.md
+              - generateSequence {}: sequences3.md
           - Scope Functions: scope-functions.md
-          - Lazy Delegate: lazy-delegate.md
+          - Variable Delegates:
+              - Lazy Delegates: lazy-delegate.md
 
 theme:
   name: 'material'
