@@ -1,5 +1,6 @@
 package org.athenian
 
+import kotlin.time.TimedValue
 import kotlin.time.measureTimedValue
 
 
@@ -9,38 +10,15 @@ fun main() {
       Thread.sleep(1000)
     }
 
-    override fun toString() = "An Expensive object: $id"
+    override fun toString() = "Expensive($id)"
   }
 
   class EagerObject {
-    val eagerVal: Expensive = calculateExpensive("eagerVal")
-    private fun calculateExpensive(id: String): Expensive = Expensive(id).also { println("Created -> $it") }
+    val eo: Expensive = calcExpensive("eagerVal")
+    private fun calcExpensive(id: String): Expensive = Expensive(id).also { println("Created: $it") }
   }
 
+  val tv: TimedValue<EagerObject> = measureTimedValue { EagerObject() }
 
-  val eagerTime = measureTimedValue { EagerObject() }
-
-  println("Took ${eagerTime.duration} to instantiate EagerObject")
-
-
-  class LazyObject {
-    val bylazyVal: Expensive by lazy { calculateExpensive("byLazyVal") }
-    val lazyVal: Lazy<Expensive> = lazy { calculateExpensive("lazyVal") }
-
-    private fun calculateExpensive(id: String): Expensive = Expensive(id).also { println("Created -> $it") }
-  }
-
-  val lazyTime = measureTimedValue { LazyObject() }
-
-  println("Took ${lazyTime.duration} to instantiate LazyObject")
-
-
-  println("\nReferencing exp.bylazyVal")
-  val byLazy: Expensive = lazyTime.value.bylazyVal
-  println("byLazy = $byLazy")
-
-  val lazy: Lazy<Expensive> = lazyTime.value.lazyVal
-  println("\nlazyVal${if (lazy.isInitialized()) "" else " not"} initialized")
-  println("lazy.value = ${lazy.value}")
-  println("lazyVal${if (lazy.isInitialized()) "" else "not"} initialized")
+  println("Took ${tv.duration} to instantiate EagerObject")
 }

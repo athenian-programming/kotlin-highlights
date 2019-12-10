@@ -12,16 +12,16 @@ fun main() {
     override fun toString() = "Expensive($id)"
   }
 
-  class ByLazyObject {
-    val bylazyVal: Expensive by lazy { calcExpensive("byLazyVal") }
+  class LazyObject {
+    val lazyVal: Lazy<Expensive> = lazy { calcExpensive("lazyVal") }
     private fun calcExpensive(id: String): Expensive = Expensive(id).also { println("Created: $it") }
   }
 
-  val tv: TimedValue<ByLazyObject> = measureTimedValue { ByLazyObject() }
+  val tv: TimedValue<LazyObject> = measureTimedValue { LazyObject() }
   println("Took ${tv.duration} to instantiate LazyObject")
 
-  repeat(3) {
-    val ref = measureTimedValue { tv.value.bylazyVal }
-    println("byLazy = ${ref.value} took ${ref.duration}")
-  }
+  val lazy: Lazy<Expensive> = tv.value.lazyVal
+  println("lazyVal${if (lazy.isInitialized()) "" else " not"} initialized")
+  println("lazy.value = ${lazy.value}")
+  println("lazyVal${if (lazy.isInitialized()) "" else "not"} initialized")
 }
