@@ -13,15 +13,6 @@ fun main() {
   p1.age = 22
   println(p1)
 
-  // With function
-  val p2: Person = Person()
-  with(p2) {
-    first = "Anh"
-    last = "Truong"
-    age = 12
-  }
-  println(p2)
-
   // Apply function
   println(Person().apply {
     first = "Patty"
@@ -56,7 +47,16 @@ fun main() {
     }
   println(p6)
 
-  // Scope functions be used in call chains
+  // With function
+  val p2: Person = Person()
+  with(p2) {
+    first = "Anh"
+    last = "Truong"
+    age = 12
+  }
+  println(p2)
+
+  // Scope functions can be used in call chains
   val numberList: MutableList&lt;Double> = mutableListOf()
   numberList
     .also { println("Populating the list $it") }
