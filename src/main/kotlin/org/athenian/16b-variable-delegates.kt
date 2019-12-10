@@ -4,24 +4,24 @@ import kotlin.time.TimedValue
 import kotlin.time.measureTimedValue
 
 fun main() {
-  class Expensive(val id: String) {
+  data class Expensive(val id: String) {
     init {
-      println("Creating Expensive object $id")
       Thread.sleep(1000)
     }
-
-    override fun toString() = "Expensive($id)"
   }
 
-  class ByLazyObject {
-    val bylazyVal: Expensive by lazy { Expensive("byLazyVal") }
+  data class ByLazyObject(val id: String) {
+    val bylazyVal: Expensive by lazy { Expensive(id) }
   }
 
-  val tv: TimedValue<ByLazyObject> = measureTimedValue { ByLazyObject() }
-  println("Took ${tv.duration} to instantiate LazyObject")
+  val tv: TimedValue<ByLazyObject> = measureTimedValue { ByLazyObject("lazy") }.apply {
+    println("Took $duration to instantiate LazyObject")
+  }
 
   repeat(3) {
-    val ref = measureTimedValue { tv.value.bylazyVal }
-    println("byLazy = ${ref.value} took ${ref.duration}")
+    measureTimedValue { tv.value.bylazyVal }
+      .apply {
+        println("byLazyVal = $value and took $duration")
+      }
   }
 }

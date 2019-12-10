@@ -9,20 +9,20 @@ import kotlin.time.measureTimedValue
 
 fun main() {
 //sampleStart
-  class Expensive(val id: String) {
+  data class Expensive(val id: String)  {
     init {
-      println("Creating Expensive object $id")
       Thread.sleep(1000)
     }
-    override fun toString() = "Expensive($id)"
   }
 
-  class EagerObject {
-    val eagerVal: Expensive = Expensive("eagerVal")
+  data class EagerObject(val id: String) {
+    val eagerVal: Expensive = Expensive(id)
   }
 
-  val tv: TimedValue&lt;EagerObject> = measureTimedValue { EagerObject() }
-  println("Took ${tv.duration} to instantiate EagerObject")
+  measureTimedValue { EagerObject("eager") }
+    .apply { 
+      println("Took $duration to instantiate $value")
+  }
 //sampleEnd
 }
 </div>
@@ -35,24 +35,25 @@ import kotlin.time.measureTimedValue
 
 fun main() {
 //sampleStart
-  class Expensive(val id: String) {
+  data class Expensive(val id: String) {
     init {
-      println("Creating Expensive object $id")
       Thread.sleep(1000)
     }
-    override fun toString() = "Expensive($id)"
   }
 
-  class ByLazyObject {
-    val bylazyVal: Expensive by lazy { Expensive("byLazyVal") }
+  data class ByLazyObject(val id: String) {
+    val bylazyVal: Expensive by lazy { Expensive(id) }
   }
 
-  val tv: TimedValue&lt;ByLazyObject> = measureTimedValue { ByLazyObject() }
-  println("Took ${tv.duration} to instantiate LazyObject")
+  val tv: TimedValue&lt;ByLazyObject> = measureTimedValue { ByLazyObject("lazy") }.apply {
+    println("Took $duration to instantiate LazyObject")
+  }
 
   repeat(3) {
-    val ref = measureTimedValue { tv.value.bylazyVal }
-    println("byLazy = ${ref.value} took ${ref.duration}")
+    measureTimedValue { tv.value.bylazyVal }
+      .apply {
+        println("byLazyVal = $value and took $duration")
+    }
   }
 //sampleEnd
 }
@@ -66,25 +67,25 @@ import kotlin.time.measureTimedValue
 
 fun main() {
 //sampleStart
-  class Expensive(val id: String) {
+  data class Expensive(val id: String) {
     init {
-      println("Creating Expensive object $id")
       Thread.sleep(1000)
     }
-    override fun toString() = "Expensive($id)"
   }
 
-  class LazyObject {
-    val lazyVal: Lazy&lt;Expensive> = lazy { Expensive("lazyVal") }
+  data class LazyObject(val id: String) {
+    val lazyVal: Lazy&lt;Expensive> = lazy { Expensive(id) }
   }
 
-  val tv: TimedValue&lt;LazyObject> = measureTimedValue { LazyObject() }
-  println("Took ${tv.duration} to instantiate LazyObject")
-  
-  val lazy: Lazy&lt;Expensive> = tv.value.lazyVal
-  println("lazyVal${if (lazy.isInitialized()) "" else " not"} initialized")
-  println("lazy.value = ${lazy.value}")
-  println("lazyVal${if (lazy.isInitialized()) "" else "not"} initialized")
+  measureTimedValue { LazyObject("byLazy") }
+    .apply {
+      println("Took $duration to instantiate $value")
+
+      val lazy: Lazy&lt;Expensive> = value.lazyVal
+      println("lazyVal${if (lazy.isInitialized()) "" else " not"} initialized")
+      println("lazy.value = ${lazy.value}")
+      println("lazyVal${if (lazy.isInitialized()) "" else "not"} initialized")
+  }
 //sampleEnd
 }
 </div>

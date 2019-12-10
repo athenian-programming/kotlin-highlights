@@ -1,27 +1,25 @@
 package org.athenian
 
-import kotlin.time.TimedValue
 import kotlin.time.measureTimedValue
 
 fun main() {
-  class Expensive(val id: String) {
+  data class Expensive(val id: String) {
     init {
-      println("Creating Expensive object $id")
       Thread.sleep(1000)
     }
-
-    override fun toString() = "Expensive($id)"
   }
 
-  class LazyObject {
-    val lazyVal: Lazy<Expensive> = lazy { Expensive("lazyVal") }
+  data class LazyObject(val id: String) {
+    val lazyVal: Lazy<Expensive> = lazy { Expensive(id) }
   }
 
-  val tv: TimedValue<LazyObject> = measureTimedValue { LazyObject() }
-  println("Took ${tv.duration} to instantiate LazyObject")
+  measureTimedValue { LazyObject("byLazy") }
+    .apply {
+      println("Took $duration to instantiate $value")
 
-  val lazy: Lazy<Expensive> = tv.value.lazyVal
-  println("lazyVal${if (lazy.isInitialized()) "" else " not"} initialized")
-  println("lazy.value = ${lazy.value}")
-  println("lazyVal${if (lazy.isInitialized()) "" else "not"} initialized")
+      val lazy: Lazy<Expensive> = value.lazyVal
+      println("lazyVal${if (lazy.isInitialized()) "" else " not"} initialized")
+      println("lazy.value = ${lazy.value}")
+      println("lazyVal${if (lazy.isInitialized()) "" else "not"} initialized")
+    }
 }
