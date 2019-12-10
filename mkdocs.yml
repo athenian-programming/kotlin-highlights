@@ -1,6 +1,6 @@
-site_name: Athenian Programming
-site_url: https://www.athenian-programming.org
-site_description: Athenian Programming Documentation
+site_name: Kotlin Examples
+site_url: https://kotlin-examples.netlify.com
+site_description: Athenian Kotlin Examples
 site_author: Athenian Programming Team
 
 repo_url: https://github.com//athenian-programming/kotlin-highlights

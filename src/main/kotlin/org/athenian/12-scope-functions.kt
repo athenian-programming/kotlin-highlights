@@ -20,22 +20,18 @@ fun main() {
   println(p2)
 
   // Apply function
-  val p3: Person =
-    Person().apply {
-      first = "Patty"
-      last = "Smith"
-      age = 5
-    }
-  println(p3)
+  println(Person().apply {
+    first = "Patty"
+    last = "Smith"
+    age = 5
+  })
 
   // Also function
-  val p4: Person =
-    Person().also { p ->
-      p.first = "Mindy"
-      p.last = "Nyberg"
-      p.age = 42
-    }
-  println(p4)
+  println(Person().also { p ->
+    p.first = "Mindy"
+    p.last = "Nyberg"
+    p.age = 42
+  })
 
   // Run function
   val p5: String =
