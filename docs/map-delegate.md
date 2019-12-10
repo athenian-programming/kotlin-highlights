@@ -11,15 +11,16 @@ fun main() {
     val age: Int by objMap
   }
 
-  User(
-    mapOf(
-      "name" to "Bill Smith",
-      "address" to "123 Main",
-      "age" to 35
-    )
-  ).apply {
-    println("$name lives at $address and is $age years old")
-  }
+  val userData = mapOf(
+    "name" to "Bill Smith",
+    "address" to "123 Main",
+    "age" to 35
+  )
+
+  User(userData)
+    .apply {
+      println("$name lives at $address and is $age years old")
+    }
 //sampleEnd
 }
 </div>
