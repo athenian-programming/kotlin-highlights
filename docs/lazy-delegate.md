@@ -11,14 +11,14 @@ fun main() {
 //sampleStart
   class Expensive(val id: String) {
     init {
+      println("Creating Expensive object $id")
       Thread.sleep(1000)
     }
     override fun toString() = "Expensive($id)"
   }
 
   class EagerObject {
-    val eagerVal: Expensive = calcExpensive("eagerVal")
-    private fun calcExpensive(id: String): Expensive = Expensive(id).also { println("Created: $it") }
+    val eagerVal: Expensive = Expensive("eagerVal")
   }
 
   val tv: TimedValue&lt;EagerObject> = measureTimedValue { EagerObject() }
@@ -37,14 +37,14 @@ fun main() {
 //sampleStart
   class Expensive(val id: String) {
     init {
+      println("Creating Expensive object $id")
       Thread.sleep(1000)
     }
     override fun toString() = "Expensive($id)"
   }
 
   class ByLazyObject {
-    val bylazyVal: Expensive by lazy { calcExpensive("byLazyVal") }
-    private fun calcExpensive(id: String): Expensive = Expensive(id).also { println("Created: $it") }
+    val bylazyVal: Expensive by lazy { Expensive("byLazyVal") }
   }
 
   val tv: TimedValue&lt;ByLazyObject> = measureTimedValue { ByLazyObject() }
@@ -68,14 +68,14 @@ fun main() {
 //sampleStart
   class Expensive(val id: String) {
     init {
+      println("Creating Expensive object $id")
       Thread.sleep(1000)
     }
     override fun toString() = "Expensive($id)"
   }
 
   class LazyObject {
-    val lazyVal: Lazy&lt;Expensive> = lazy { calcExpensive("lazyVal") }
-    private fun calcExpensive(id: String): Expensive = Expensive(id).also { println("Created: $it") }
+    val lazyVal: Lazy&lt;Expensive> = lazy { Expensive("lazyVal") }
   }
 
   val tv: TimedValue&lt;LazyObject> = measureTimedValue { LazyObject() }

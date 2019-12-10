@@ -1,4 +1,4 @@
-# Kotlin Sequences 3
+# Use of generateSequence {} block
 
 ## Simple use of `sequence {}` block
 

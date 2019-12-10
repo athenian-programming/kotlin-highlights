@@ -7,6 +7,7 @@ import kotlin.time.measureTimedValue
 fun main() {
   class Expensive(val id: String) {
     init {
+      println("Creating Expensive object $id")
       Thread.sleep(1000)
     }
 
@@ -14,8 +15,7 @@ fun main() {
   }
 
   class EagerObject {
-    val eo: Expensive = calcExpensive("eagerVal")
-    private fun calcExpensive(id: String): Expensive = Expensive(id).also { println("Created: $it") }
+    val eagerVal: Expensive = Expensive("eagerVal")
   }
 
   val tv: TimedValue<EagerObject> = measureTimedValue { EagerObject() }

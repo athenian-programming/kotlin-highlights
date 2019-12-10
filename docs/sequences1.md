@@ -1,4 +1,4 @@
-# Kotlin Sequences 1
+# Use of sequence {} block
 
 ## Using an iterator to generate values
 
