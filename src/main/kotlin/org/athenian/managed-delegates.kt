@@ -26,9 +26,9 @@ fun main() {
   DelegateExample()
     .apply {
       desc = "A new value"
-      println("Desc = $desc")
+      println("desc = $desc")
       desc = "A second new value"
-      println("Desc = $desc")
-      println("Desc = $desc")
+      println("desc = $desc")
+      println("desc = $desc")
     }
 }

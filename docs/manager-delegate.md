@@ -12,12 +12,12 @@ fun main() {
   class MonitoredString(var content: String = "") {
     private val counter = AtomicInteger(0)
 
-    operator fun getValue(thisRef: Any?, property: KProperty<*>): String {
+    operator fun getValue(thisRef: Any?, property: KProperty&lt;*>): String {
       val cnt = counter.incrementAndGet()
       return "$content [Accessed $cnt time${if (cnt == 1) "" else "s"}]"
     }
 
-    operator fun setValue(thisRef: Any, property: KProperty<*>, value: String) {
+    operator fun setValue(thisRef: Any, property: KProperty&lt;*>, value: String) {
       content = "${LocalDateTime.now()}: $value"
     }
   }
@@ -29,10 +29,10 @@ fun main() {
   DelegateExample()
     .apply {
       desc = "A new value"
-      println("Desc = $desc")
+      println("desc = $desc")
       desc = "A second new value"
-      println("Desc = $desc")
-      println("Desc = $desc")
+      println("desc = $desc")
+      println("desc = $desc")
     }
 //sampleEnd
 }

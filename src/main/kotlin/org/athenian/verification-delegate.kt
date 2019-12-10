@@ -9,8 +9,7 @@ fun main() {
     operator fun getValue(thisRef: Any?, property: KProperty<*>): Int = intValue
 
     operator fun setValue(thisRef: Any, property: KProperty<*>, value: Int) {
-      if (value % 2 != 0)
-        throw IllegalArgumentException("Even numbers only please!")
+      require(value % 2 != 0) { "Even numbers only please!" }
       intValue = value
     }
   }

@@ -9,11 +9,10 @@ fun main() {
 //sampleStart
   class EventNumbersOnly(var intValue: Int = 0) {
 
-    operator fun getValue(thisRef: Any?, property: KProperty<*>): Int = intValue
+    operator fun getValue(thisRef: Any?, property: KProperty&lt;*>): Int = intValue
 
-    operator fun setValue(thisRef: Any, property: KProperty<*>, value: Int) {
-      if (value % 2 != 0)
-        throw IllegalArgumentException("Even numbers only please!")
+    operator fun setValue(thisRef: Any, property: KProperty&lt;*>, value: Int) {
+      require(value % 2 != 0) { "Even numbers only please!" }
       intValue = value
     }
   }
