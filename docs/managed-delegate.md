@@ -1,6 +1,6 @@
 # Implementation of a Property Delegates
 
-## Managed Property
+## Managed Delegated Property
 
 <div class="kotlin-code">
 import java.time.LocalDateTime

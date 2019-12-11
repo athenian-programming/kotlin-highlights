@@ -17,7 +17,7 @@ nav:
       - Delegated Properties:
           - Map Delegate: map-delegate.md
           - Observable Delegate: observable-delegate.md
-          - Manager Delegate: manager-delegate.md
+          - Managed Delegate: managed-delegate.md
           - Lazy Delegate: lazy-delegate.md
 
 theme:
