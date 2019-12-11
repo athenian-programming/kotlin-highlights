@@ -11,6 +11,7 @@ fun main() {
     }
 
     var evenNum: Int by Delegates.vetoable(0) { prop: KProperty<*>, old: Int, new: Int ->
+      println("Attempting to change \"${prop.name}\" from $old to $new")
       // require(new % 2 != 0) { "Even numbers only please!" }
       new % 2 == 0
     }
