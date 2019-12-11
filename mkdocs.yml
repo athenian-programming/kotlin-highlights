@@ -16,9 +16,9 @@ nav:
       - Scope Functions: scope-functions.md
       - Delegated Properties:
           - Map Delegate: map-delegate.md
-          - Observable Delegate: observable-delegate.md
-          - Managed Delegate: managed-delegate.md
+          - Standard Delegates: standard-delegates.md
           - Lazy Delegate: lazy-delegate.md
+          - Managed Delegate: managed-delegate.md
 
 theme:
   name: 'material'
