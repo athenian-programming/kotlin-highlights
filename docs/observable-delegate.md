@@ -3,6 +3,7 @@
 ## Delegates.observable and Delegates.vetoable
 
 <div class="kotlin-code">
+import kotlin.properties.Delegates
 import kotlin.reflect.KProperty
 
 fun main() {
