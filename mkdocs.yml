@@ -18,7 +18,7 @@ nav:
           - Map Delegate: map-delegate.md
           - Standard Delegates: standard-delegates.md
           - Lazy Delegate: lazy-delegate.md
-          - User-defined Delegate: user-delegate.md
+          - User-defined Delegates: user-delegates.md
 
 theme:
   name: 'material'
