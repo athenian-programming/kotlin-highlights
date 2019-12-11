@@ -1,4 +1,19 @@
-# Use of sequence {} block
+# Use of sequence {}
+
+## `sequence {}` 
+
+<div class="kotlin-code">
+fun main() {
+//sampleStart
+  val seqCount: Sequence&lt;Int> =
+    sequence {
+      (0..10).forEach { yield(it) }
+    }
+  
+  println(seqCount.toList())
+//sampleEnd
+}
+</div>
 
 ## Using an iterator to generate values
 

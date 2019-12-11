@@ -1,4 +1,4 @@
-# Kotlin Sequences 2
+# Combining Sequences
 
 ## Even numbers from `repeat()` stmt
 

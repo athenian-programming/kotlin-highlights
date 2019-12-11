@@ -2,6 +2,13 @@ package org.athenian
 
 fun main() {
 
+  val seqCount: Sequence<Int> =
+    sequence {
+      (0..10).forEach { yield(it) }
+    }
+
+  println(seqCount.toList())
+
   val doReMi: Sequence<String> =
     sequence {
       listOf("Do", "Re", "Mi", "Fa", "Sol", "La", "Ti", "Do")
@@ -17,7 +24,6 @@ fun main() {
 
   for (note in doReMi)
     println("Note: $note")
-
 
   val everyOther: List<String> =
     doReMi

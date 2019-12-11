@@ -1,20 +1,5 @@
 # Use of generateSequence {} 
 
-## `sequence {}` 
-
-<div class="kotlin-code">
-fun main() {
-//sampleStart
-  val seqCount: Sequence&lt;Int> =
-    sequence {
-      (0..10).forEach { yield(it) }
-    }
-  
-  println(seqCount.toList())
-//sampleEnd
-}
-</div>
-
 ## Fibonacci Pairs using `sequence {}` 
 
 * F(n) = F(n-1) + F(n-2) 
