@@ -1,6 +1,6 @@
-# Implementation of a Property Delegates
+# User-defined Property Delegates
 
-## Managed Delegated Property
+## MonitoredString
 
 <div class="kotlin-code">
 import java.time.LocalDateTime
