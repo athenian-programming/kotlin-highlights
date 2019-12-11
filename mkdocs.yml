@@ -14,9 +14,9 @@ nav:
           - Combining Sequences: combining-sequences.md
           - generateSequence {}: generate-sequence.md
       - Scope Functions: scope-functions.md
-      - Instance Variable Delegates:
+      - Pproperty Delegates:
           - Map Delegate: map-delegate.md
-          - Verification Delegate: verification-delegate.md
+          - Verification Delegate: observable-delegate.md
           - Manager Delegate: manager-delegate.md
           - Lazy Delegate: lazy-delegate.md
 

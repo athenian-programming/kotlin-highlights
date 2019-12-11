@@ -1,7 +1,6 @@
 # Lazy Delegates
 
-
-## Eagerly calculated instance variable
+## Eagerly assigned property
 
 <div class="kotlin-code">
 import kotlin.time.TimedValue
@@ -27,7 +26,7 @@ fun main() {
 }
 </div>
 
-## Lazily calculated instance variable using a delegate
+## Lazily assigned property using a delegate
 
 <div class="kotlin-code">
 import kotlin.time.TimedValue
@@ -59,7 +58,7 @@ fun main() {
 }
 </div>
 
-## Lazily calculated instance variable without a delegate
+## Lazily assigned property without a delegate
 
 <div class="kotlin-code">
 import kotlin.time.TimedValue

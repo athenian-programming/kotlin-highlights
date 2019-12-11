@@ -1,6 +1,6 @@
 # Map Delegates
 
-## Map-based instance variables
+## Map-based delegated properties
 
 <div class="kotlin-code">
 fun main() {

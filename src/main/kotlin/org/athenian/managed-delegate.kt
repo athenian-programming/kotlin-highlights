@@ -20,15 +20,15 @@ fun main() {
   }
 
   class DelegateExample() {
-    var desc: String by MonitoredString()
+    var strVal: String by MonitoredString()
   }
 
   DelegateExample()
     .apply {
-      desc = "A new value"
-      println("desc = $desc")
-      desc = "A second new value"
-      println("desc = $desc")
-      println("desc = $desc")
+      strVal = "A first value"
+      println("strVal = $strVal")
+      strVal = "A second value"
+      println("strVal = $strVal")
+      println("strVal = $strVal")
     }
 }

@@ -1,6 +1,6 @@
-# Use of generateSequence {} block
+# Use of generateSequence {} 
 
-## Simple use of `sequence {}` block
+## `sequence {}` 
 
 <div class="kotlin-code">
 fun main() {
@@ -15,7 +15,7 @@ fun main() {
 }
 </div>
 
-## Fibonacci Pairs with seeded `sequence {}` block
+## Fibonacci Pairs using `sequence {}` 
 
 * F(n) = F(n-1) + F(n-2) 
 
@@ -37,7 +37,7 @@ fun main() {
 </div>
 
 
-## Simple use of `generateSequence {}` block
+## `generateSequence {}`
 
 * No explicit `yield` with `generateSequence` block
 * Sequence ends on null
@@ -58,7 +58,7 @@ fun main() {
 </div>
 
 
-## Predicate with a `generateSequence {}` block
+## `generateSequence {}` with a predicate
 
 <div class="kotlin-code">
 fun main() {
@@ -74,7 +74,7 @@ fun main() {
 }
 </div>
 
-## Seeded `generateSequence {}` block
+## Seeded `generateSequence {}`
 
 * Seed value used in initial call, subsequent calls use the most recent return value.
 
@@ -92,7 +92,7 @@ fun main() {
 </div>
 
 
-## Fibonacci Pairs with seeded `generateSequence {}` block
+## Fibonacci Pairs with seeded `generateSequence {}`
 
 * F(n) = F(n-1) + F(n-2) 
 
