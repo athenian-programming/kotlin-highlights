@@ -8,10 +8,12 @@ import kotlin.reflect.KProperty
 fun main() {
 //sampleStart
   class DelegateExample() {
-    var watchedNum: Int by Delegates.observable(0) { prop, old, new ->
+    // Does *not* prevent assignment
+    var watchedNum: Int by Delegates.observable(0) { prop: KProperty&lt;*>, old: Int, new: Int->
       println("Changing \"${prop.name}\" from $old to $new")
     }
 
+    // Can prevent assignment
     var evenNum: Int by Delegates.vetoable(0) { prop: KProperty&lt;*>, old: Int, new: Int ->
       // require(new % 2 != 0) { "Even numbers only please!" }
       new % 2 == 0
