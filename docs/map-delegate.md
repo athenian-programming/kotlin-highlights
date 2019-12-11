@@ -11,7 +11,7 @@ fun main() {
     val age: Int by objMap
   }
 
-  val userData = mapOf(
+  val userData = mutableMapOf(
     "name" to "Bill Smith",
     "address" to "123 Main",
     "age" to 35
@@ -19,6 +19,8 @@ fun main() {
 
   User(userData)
     .apply {
+      println("$name lives at $address and is $age years old")
+      userData["age"] = 25
       println("$name lives at $address and is $age years old")
     }
 //sampleEnd
