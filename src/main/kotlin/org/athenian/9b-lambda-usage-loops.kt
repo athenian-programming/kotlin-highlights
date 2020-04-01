@@ -13,7 +13,8 @@ fun main() {
   // Equivalent with lambda
   fun myRepeat(count: Int, block: (i: Int) -> Unit) {
     for (i in 0 until count)
-      block(i)
+      block.invoke(i)
+    // block(i)
   }
 
   myRepeat(10) {

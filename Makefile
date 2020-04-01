@@ -12,5 +12,8 @@ serve:
 clean:
 	rm -rf site
 
+refresh:
+	./gradlew --refresh-dependencies
+
 versioncheck:
 	./gradlew dependencyUpdates

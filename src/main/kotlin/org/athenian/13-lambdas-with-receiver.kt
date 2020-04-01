@@ -14,12 +14,13 @@ fun main() {
     fun person(block: (Person) -> Unit): Person {
       val p = Person()
       block(p)
+      //block.invoke(p)
       return p
     }
 
-    return person {
-      it.name = "John"
-      it.age = 25
+    return person { p: Person ->
+      p.name = "John"
+      p.age = 25
     }
   }
 
@@ -29,12 +30,13 @@ fun main() {
     fun person(block: Person.() -> Unit): Person {
       val p = Person()
       p.block()
+      //p.apply(block)
       return p
     }
 
     return person {
-      name = "Mary"
-      age = 26
+      this.name = "Mary"
+      this.age = 26
     }
   }
 

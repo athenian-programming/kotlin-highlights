@@ -7,7 +7,7 @@ val Int.isEven: Boolean
   get() = this % 2 == 0
 
 // Extension function for Int
-fun Int.double(): Int = this * this
+fun Int.double(): Int = this + this
 
 // Extension function for String
 fun String.mixCase(): String {
