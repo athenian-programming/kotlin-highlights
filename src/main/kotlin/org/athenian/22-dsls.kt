@@ -10,7 +10,6 @@ import java.util.*
 
 fun main() {
 
-  // Not a very approach
   fun familyExample() {
     class Family {
       val members = mutableListOf<String>()
