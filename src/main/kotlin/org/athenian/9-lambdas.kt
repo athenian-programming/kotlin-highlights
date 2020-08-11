@@ -27,7 +27,7 @@ fun main() {
 
   println("double2(8): ${double2(8)}")
 
-  // Higher-order function as parameter
+  // Higher-order function as a parameter
   fun twoIntFunc(x: Int,
                  y: Int,
                  block: (Int, Int) -> Int): Int = block(x, y)
@@ -76,7 +76,6 @@ fun main() {
 
   greetingWithName("Jin")
   greetingWithName.invoke("Mary")
-
 
   // Derive return lambda from parameter
   fun receiptText(template: String): (Int) -> String {
