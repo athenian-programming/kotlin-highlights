@@ -20,8 +20,8 @@ fun String.mixCase(): String {
 
 // Extension function for String with params
 fun String.halfCase(lowerFirst: Boolean = true): String {
-  val firstHalf = this.slice(0..this.length / 2)
-  val secondHalf = this.slice(this.length / 2 until this.length)
+  val firstHalf = this.slice(0..length / 2)
+  val secondHalf = this.slice(length / 2 until length)
   return if (lowerFirst)
     firstHalf.toLowerCase() + secondHalf.toUpperCase()
   else
