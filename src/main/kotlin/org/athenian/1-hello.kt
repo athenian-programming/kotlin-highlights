@@ -9,8 +9,8 @@ package org.athenian
 
 fun main() {
   // Type decls come after the variable and function
-  val hello: String = "Hello World"
-  val i = 0
+  val hello = "Hello World"
+  val name: String = "Pete"
 
   // String templates
   println("I would like to say: $hello")
@@ -18,12 +18,12 @@ fun main() {
 
   // Sane treatment for Strings
   println("Equal: ${"Hello World" == hello}")
-  println("Contains: ${"Hello" in hello}")
+  println("Contains: ${"Hello" in listOf(hello, name)}")
 
   // Support for multiline strings
   val multi = """
-        Kotlin supports multiline
-        strings 
+        Kotlin supports 
+        multiline strings 
     """.trimIndent()
   println(multi)
 }
