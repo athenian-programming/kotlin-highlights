@@ -39,7 +39,8 @@ fun main() {
     .forEach { println("Looking at [$it]") }
 
   // Peak at Sequences
-  "This is a list of words".split(" ")
+  "This is a list of words"
+    .split(" ")
     .asSequence()
     .onEach { println("First: $it") }
     .onEach { println("Second: $it") }
