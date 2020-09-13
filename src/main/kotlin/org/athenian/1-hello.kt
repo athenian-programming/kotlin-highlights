@@ -10,9 +10,9 @@ package org.athenian
 fun main() {
   // Type decls come after the variable and function
   val hello: String = "Hello World"
+  val i = 0
 
-  // String interpolation
-  // No System.out prefix
+  // String templates
   println("I would like to say: $hello")
   println("My greeting had a length of: ${hello.length}")
 
@@ -25,7 +25,5 @@ fun main() {
         Kotlin supports multiline
         strings 
     """.trimIndent()
-
   println(multi)
 }
-
