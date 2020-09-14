@@ -2,14 +2,14 @@ package org.athenian
 
 fun main() {
 
-  class User(objMap: Map<String, Any?>) {
-    val name: String by objMap
-    val address: String by objMap
-    val age: Int by objMap
+  class User(map: Map<String, Any>) {
+    val name: String by map
+    val address: String by map
+    val age: Int by map
   }
 
-  val userData: MutableMap<String, Any> =
-    mutableMapOf(
+  val userData =
+    mutableMapOf<String, Any>(
       "name" to "Bill Smith",
       "address" to "123 Main",
       "age" to 35

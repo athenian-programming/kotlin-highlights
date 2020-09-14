@@ -10,12 +10,27 @@ version '1.0-SNAPSHOT'
 sourceCompatibility = 1.8
 
 repositories {
-    mavenCentral()
+    maven { url 'https://kotlin.bintray.com/ktor' }
+    maven { url 'https://kotlin.bintray.com/kotlinx' }
+    maven { url 'https://kotlin.bintray.com/kotlin-js-wrappers' }
+    maven { url 'https://maven-central.storage-download.googleapis.com/repos/central/data/' }
+    jcenter()
+    maven { url = 'https://jitpack.io' }
 }
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     implementation "io.github.microutils:kotlin-logging:$logging_version"
+    implementation "io.ktor:ktor-server-core:$ktor_version"
+    implementation "io.ktor:ktor-server-cio:$ktor_version"
+
+    implementation "io.ktor:ktor-server-sessions:$ktor_version"
+    implementation "io.ktor:ktor-html-builder:$ktor_version"
+    implementation "io.ktor:ktor-html-builder:$ktor_version"
+    implementation "io.ktor:ktor-locations:$ktor_version"
+    implementation "io.ktor:ktor-metrics:$ktor_version"
+    implementation "io.ktor:ktor-websockets:$ktor_version"
+
     implementation "ch.qos.logback:logback-classic:$logback_version"
 
     testCompile group: 'junit', name: 'junit', version: '4.13'

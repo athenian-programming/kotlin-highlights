@@ -9,8 +9,8 @@ package org.athenian
 
 fun main() {
   // Type decls come after the variable and function
-  val hello = "Hello World"
-  val name: String = "Pete"
+  val hello: String = "Hello World"
+  val name = "Pete"
 
   // String templates
   println("I would like to say: $hello")
@@ -18,7 +18,7 @@ fun main() {
 
   // Sane treatment for Strings
   println("Equal: ${"Hello World" == hello}")
-  println("Contains: ${"Hello" in listOf(hello, name)}")
+  println("Contains: ${"et" in name}")
 
   // Support for multiline strings
   val multi = """

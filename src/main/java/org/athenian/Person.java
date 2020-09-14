@@ -6,7 +6,6 @@ public class Person {
     private String last;
     private int age;
 
-
     public Person() {
     }
 

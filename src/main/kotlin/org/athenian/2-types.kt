@@ -10,7 +10,6 @@ fun main() {
   // Read-only enforced
   // b = "cannot be reassigned"
 
-
   // Type inference
   val t = "A String"
   val u = t
