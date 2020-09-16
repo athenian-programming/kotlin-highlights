@@ -10,11 +10,11 @@ fun main() {
     return actions.map { it(i) }.sum()
   }
 
-  println(sumOfActions(4, listOf(double, double))) // produces 16
-  println(sumOfActions(4, listOf(double, triple))) // produces 20
+  println(sumOfActions(4, listOf(double, double)))         // 16
+  println(sumOfActions(4, listOf(double, triple)))         // 20
 
-  println(sumOfActions(5, listOf({ it + 2 }, { it + 3 }))) // produces 15
-  println(sumOfActions(5, listOf(double, { it + 3 }))) // produces 18
+  println(sumOfActions(5, listOf({ it + 2 }, { it + 3 }))) // 15
+  println(sumOfActions(5, listOf(double, { it + 3 })))     // 18
 
 
 }
