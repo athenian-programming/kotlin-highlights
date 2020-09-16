@@ -15,10 +15,10 @@ val Int.isEven: Boolean
 fun <T> T.isNull() = this == null
 
 fun main() {
-  println("This is a test".mixCase())
-  println(3.isEven)
-  println(null.isNull())
-  println("Hello".isNull())
+  println("This is a test".mixCase()) // tHiS Is a tEsT
+  println(3.isEven)                   // false
+  println(null.isNull())              // true
+  println("Hello".isNull())           // false
 }
 
 
