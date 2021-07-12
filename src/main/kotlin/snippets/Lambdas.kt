@@ -15,10 +15,4 @@ fun main() {
 
   println(sumOfActions(5, listOf({ it + 2 }, { it + 3 }))) // 15
   println(sumOfActions(5, listOf(double, { it + 3 })))     // 18
-
-
 }
-
-
-
-
