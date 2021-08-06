@@ -4,7 +4,7 @@ import kotlin.properties.Delegates
 import kotlin.reflect.KProperty
 
 fun main() {
-  class DelegateExample() {
+  class DelegateExample {
     // Delegates.observable() does *not* prevent assignment
     var watchedNum: Int by Delegates.observable(0) { prop, old, new ->
       println("Changing \"${prop.name}\" from $old to $new")

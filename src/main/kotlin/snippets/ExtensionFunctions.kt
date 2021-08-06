@@ -4,7 +4,7 @@ package snippets
 fun String.mixCase(): String {
   return this.toList()
     .mapIndexed { i: Int, c: Char ->
-      if (i.isEven) c.toLowerCase() else c.toUpperCase()
+      if (i.isEven) c.lowercaseChar() else c.uppercaseChar()
     }
     .joinToString(separator = "")
 }

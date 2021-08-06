@@ -1,6 +1,6 @@
 package snippets
 
-class Rectangle() {
+class Rectangle {
   var width = 0
   var height = 0
   fun fill(color: Int) {}

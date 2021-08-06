@@ -1,5 +1,7 @@
 package org.athenian
 
+import java.util.*
+
 fun main() {
   val words = "The quick brown fox jumps over the lazy dog".split(" ")
 
@@ -19,7 +21,7 @@ fun main() {
 
   val longWords = words.filter { it.length > 3 }
 
-  val convertedWords = words.map { it.toUpperCase() }
+  val convertedWords = words.map { it.uppercase(Locale.getDefault()) }
 
   val takeWhile = words.takeWhile { it != "over" }
 

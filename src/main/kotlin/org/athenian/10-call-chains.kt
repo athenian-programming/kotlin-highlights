@@ -1,8 +1,8 @@
 package org.athenian
 
 import java.lang.Thread.sleep
-import kotlin.time.measureTimedValue
-import kotlin.time.seconds
+import kotlin.time.Duration
+import kotlin.time.measureTime
 
 fun main() {
 
@@ -47,10 +47,10 @@ fun main() {
     .forEach { println("Third: $it") }
 
 
-  val (_, dur) = measureTimedValue {
+  val dur = measureTime {
     "Another set of words".split(" ")
       .asSequence()
-      .onEach { sleep(2.seconds.toLongMilliseconds()) }
+      .onEach { sleep(Duration.seconds(2).inWholeMilliseconds) }
       .onEach { println("First: $it") }
       //.take(1)
       .onEach { println("Second: $it") }

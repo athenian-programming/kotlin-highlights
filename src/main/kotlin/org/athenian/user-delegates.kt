@@ -19,7 +19,7 @@ fun main() {
     }
   }
 
-  class DelegateExample() {
+  class DelegateExample {
     var strVal: String by MonitoredString()
   }
 

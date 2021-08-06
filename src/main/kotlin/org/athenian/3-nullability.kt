@@ -1,5 +1,7 @@
 package org.athenian
 
+import java.util.*
+
 fun main() {
   // Say good-bye to the dreaded NPE
   // Nullability is built into the type system
@@ -14,7 +16,7 @@ fun main() {
     a = b
 
   // Null propagation
-  a = b?.toUpperCase()?.dropLast(4)?.drop(3) ?: "Found a null value"
+  a = b?.uppercase(Locale.getDefault())?.dropLast(4)?.drop(3) ?: "Found a null value"
 
   // Trust me, I know what I am doing -- all bets are off for NPE
   a = b!!

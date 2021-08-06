@@ -1,5 +1,7 @@
 package org.athenian
 
+import java.util.*
+
 fun main() {
   data class Person(var first: String = "", var last: String = "", var age: Int = 0)
 
@@ -30,7 +32,7 @@ fun main() {
       first = "Bill"
       last = "Jackson"
       age = 42
-      toString().toUpperCase()
+      toString().uppercase(Locale.getDefault())
     }
   println(p5)
 
@@ -40,7 +42,7 @@ fun main() {
       it.first = "Mindy"
       it.last = "Nyberg"
       it.age = 42
-      it.toString().toLowerCase()
+      it.toString().lowercase(Locale.getDefault())
     }
   println(p6)
 
@@ -54,8 +56,7 @@ fun main() {
   println(p2)
 
   // Scope functions can be used in call chains
-  val numberList: MutableList<Double> = mutableListOf()
-  numberList
+  mutableListOf<Double>()
     .also { println("Populating the list $it") }
     .apply {
       add(2.71)

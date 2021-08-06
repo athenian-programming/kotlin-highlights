@@ -14,7 +14,7 @@ fun main() {
 
 
   val vals: List<Int> = evenNumbers(10).toList()
-  println("Even numbers <= 10: ${vals}")
+  println("Even numbers <= 10: $vals")
 
 
   fun evenNumbers2(max: Int): Sequence<Int> =

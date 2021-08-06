@@ -14,7 +14,6 @@ fun main() {
     return strbuf.toString()
   }
 
-
   fun lambdaRandomId(length: Int = 10): String =
     (1..length)
       .map { Random.nextInt(0, charPool.size) }

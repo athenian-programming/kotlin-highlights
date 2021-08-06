@@ -1,6 +1,6 @@
 package org.athenian
 
-import kotlin.time.measureTimedValue
+import kotlin.time.measureTime
 
 fun main() {
 
@@ -21,14 +21,14 @@ fun main() {
     }
   }
 
-  val (_, dur0) = measureTimedValue {
+  val dur0 = measureTime {
     printValue(true, aVeryExpensiveCall())
     printValue(true) { aVeryExpensiveCall() }
   }
 
   println("Calling methods with true took $dur0")
 
-  val (_, dur1) = measureTimedValue {
+  val dur1 = measureTime {
     printValue(false, aVeryExpensiveCall())
     printValue(false) { aVeryExpensiveCall() }
   }

@@ -1,7 +1,7 @@
 package org.athenian
 
 import mu.KLogging
-import kotlin.time.measureTimedValue
+import kotlin.time.measureTime
 
 class MyClass {
 
@@ -23,7 +23,7 @@ class MyClass {
   companion object : KLogging() {
     @JvmStatic
     fun main(args: Array<String>) {
-      val (vals, dur) = measureTimedValue {
+      val dur = measureTime {
         val t = MyClass()
         t.method1()
         t.method2()
