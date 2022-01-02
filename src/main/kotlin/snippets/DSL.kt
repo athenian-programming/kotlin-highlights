@@ -1,8 +1,8 @@
 package snippets
 
-import io.ktor.application.*
-import io.ktor.html.*
-import io.ktor.routing.*
+import io.ktor.server.application.*
+import io.ktor.server.html.*
+import io.ktor.server.routing.*
 import kotlinx.html.body
 import kotlinx.html.h1
 import kotlinx.html.head
