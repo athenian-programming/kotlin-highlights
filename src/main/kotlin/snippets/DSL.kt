@@ -9,7 +9,6 @@ import kotlinx.html.head
 import kotlinx.html.p
 import kotlinx.html.title
 
-
 fun Application.main() {
   routing {
     get("/hello") {

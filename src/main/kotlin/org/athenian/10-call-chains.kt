@@ -1,7 +1,7 @@
 package org.athenian
 
 import java.lang.Thread.sleep
-import kotlin.time.Duration
+import kotlin.time.Duration.Companion.seconds
 import kotlin.time.measureTime
 
 fun main() {
@@ -50,7 +50,7 @@ fun main() {
   val dur = measureTime {
     "Another set of words".split(" ")
       .asSequence()
-      .onEach { sleep(Duration.seconds(2).inWholeMilliseconds) }
+      .onEach { sleep(2.seconds.inWholeMilliseconds) }
       .onEach { println("First: $it") }
       //.take(1)
       .onEach { println("Second: $it") }
