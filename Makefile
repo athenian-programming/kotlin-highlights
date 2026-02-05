@@ -1,5 +1,8 @@
 default: versioncheck
 
+build: clean
+	./gradlew build
+
 website:
 	mkdocs build --clean
 
@@ -19,4 +22,4 @@ versioncheck:
 	./gradlew dependencyUpdates
 
 upgrade-wrapper:
-	./gradlew wrapper --gradle-version=8.11.1 --distribution-type=bin
+	./gradlew wrapper --gradle-version=9.3.1 --distribution-type=bin
