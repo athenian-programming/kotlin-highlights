@@ -1,9 +1,9 @@
 [versions]
-kotlin = "2.3.20-Beta2"
+kotlin = "2.3.10"
 ktor = "3.4.0"
-kotlin-logging = "8.0.00-beta-04"
-logback = "1.5.27"
-slf4j = "2.0.13"
+kotlin-logging = "7.0.14"
+logback = "1.5.28"
+slf4j = "2.0.17"
 versions-plugin = "0.53.0"
 
 [libraries]
