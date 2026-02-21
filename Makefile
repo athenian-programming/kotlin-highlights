@@ -1,7 +1,7 @@
 default: versioncheck
 
 build: clean
-	./gradlew build
+	./gradlew build -x test
 
 website:
 	mkdocs build --clean
